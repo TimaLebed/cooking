@@ -1,0 +1,54 @@
+@font-face {
+	font-family: "Nunito-Regular";
+	src: url(../../../../assets/fonts/Nunito_Sans/NunitoSans-Regular.ttf);
+}
+
+@font-face {
+	font-family: "Montserrat-Bold";
+	src: url(../../../../assets/fonts/Montserrat/Montserrat-Bold.ttf);
+}
+
+.recipes-wrapper {
+  height: 780px;
+  width: 100%;
+  max-width: 1616px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.recipes-context {
+  height: 676px;
+  width: 100%;
+  max-width: 1224px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.recipes-suptitle {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #FFBC01;
+  font-family: "Nunito-Regular", sans-serif;
+}
+
+.recipes-title {
+  width: 1110px;
+  height: 48px;
+  font-size: 40px;
+  line-height: 48px;
+  color: #181818;
+	font-family: "Montserrat-Bold", sans-serif;
+}
+
+.recipes-cards {
+  width: 1224px;
+  height: 414px;
+  display: flex;
+  justify-content: space-between;
+}

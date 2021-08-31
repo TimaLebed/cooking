@@ -1,0 +1,101 @@
+@font-face {
+	font-family: "Nunito-Regular";
+	src: url(../../assets/fonts/Nunito_Sans/NunitoSans-Regular.ttf);
+}
+
+@font-face {
+	font-family: "Montserrat-SemiBold";
+	src: url(../../assets/fonts/Montserrat/Montserrat-SemiBold.ttf);
+}
+
+.card {
+  width: 288px;
+  height: 414px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.card__views {
+  margin: 24px 0 16px 48px;
+  position: relative;
+  font-size: 14px;
+  line-height: 19px;
+  color: #181818;
+	font-family: "Nunito-Regular", sans-serif;
+  text-align: left;
+}
+
+.card__views::before {
+  content: "";
+  background-image: url('../../assets/icons/views.svg');
+  display: block;
+  width: 16px;
+  height: 11px;
+  position: absolute;
+  left: -25px;
+  top: 4px;
+  transition: all 0.3s;
+}
+
+.card__img {
+  width: 240px;
+  height: 240px;
+  border-radius: 50px 10px;
+  /* background-image: url('../../assets/images/fish.png'); */
+}
+
+.card__title {
+  font-size: 20px;
+  line-height: 24px;
+  color: #181818;
+	font-family: "Montserrat-SemiBold", sans-serif;
+  text-align: left;
+}
+
+.card__author,.card__likes,.card__comments{
+  position: relative;
+  font-size: 14px;
+  line-height: 19px;
+  color: #181818;
+  font-family: "Nunito-Regular", sans-serif;
+}
+
+.card__likes {
+  margin: 0 47px 0 25px;
+}
+
+.card__likes::before {
+  content: "";
+  background-image: url('../../assets/icons/likes.svg');
+  display: block;
+  width: 17px;
+  height: 15px;
+  position: absolute;
+  left: -27px;
+  top: 2px;
+  transition: all 0.3s;
+}
+
+.card__comments::before {
+  content: "";
+  background-image: url('../../assets/icons/comments.svg');
+  display: block;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  left: -27px;
+  top: 2px;
+  transition: all 0.3s;
+}
+
+.wrapper-title-author,.wrapper-likes-comments {
+  display: flex;
+  justify-content: space-between;
+  width: 240px;
+  margin: 16px auto 32px;
+}
+
+.wrapper-likes-comments {
+  margin: 0 auto;
+  justify-content: flex-start;
+}

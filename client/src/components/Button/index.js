@@ -1,9 +1,9 @@
 import React from "react";
 import "./index.css";
 
-function Button() {
+function Button({ children }) {
   return (
-    <button className="btn" type="button">Create cookBook</button>
+    <button className="btn" type="button">{ children }</button>
   )
 }
 
