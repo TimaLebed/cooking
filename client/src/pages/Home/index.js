@@ -1,6 +1,7 @@
 import React, {Fragment} from "react";
 import HomeIntro from "./copmonents/HomeIntro";
 import PopularRecipes from "./copmonents/PopularRecipes";
+import PopularBooks from "./copmonents/PopularBooks";
 import "./index.css";
 
 function Home() {
@@ -8,6 +9,7 @@ function Home() {
     <Fragment>
       <HomeIntro></HomeIntro>
       <PopularRecipes></PopularRecipes>
+      <PopularBooks></PopularBooks>
     </Fragment>
   )
 }
