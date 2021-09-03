@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Logo from "../Logo";
 import Button from "../Button";
 import "./index.css";
@@ -24,7 +25,7 @@ function Header() {
           </svg>
         </form>
         <Button>Create cookBook</Button>
-        <a href="#" className="sign-in">Sign in</a>
+        <Link to="/login" className="sign-in">Sign in</Link>
       </div>
     </header>
   );

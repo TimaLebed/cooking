@@ -1,0 +1,46 @@
+@font-face {
+	font-family: "Nunito-Regular";
+	src: url(../../../../assets/fonts/Nunito_Sans/NunitoSans-Regular.ttf);
+}
+
+@font-face {
+	font-family: "Montserrat-Bold";
+	src: url(../../../../assets/fonts/Montserrat/Montserrat-Bold.ttf);
+}
+
+@font-face {
+	font-family: "Nunito-Bold";
+	src: url(../../../../assets/fonts/Nunito_Sans/NunitoSans-Bold.ttf);
+}
+
+.trending-wrapper {
+  height: 986px;
+  width: 100%;
+  max-width: 1616px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../../../../assets/images/trending-back.png);
+}
+
+.trending-context {
+  height: 778px;
+  width: 100%;
+  max-width: 1224px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.trending-cards {
+  width: 1224px;
+  height: 460px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.swiper-pagination {
+  width: 64px;
+  height: 16px;
+}

@@ -1,0 +1,20 @@
+.login-wrapper {
+  width: 100%;
+  max-width: 1680px;
+  height: 1024px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: #F7F7F7;
+}
+
+.login-background {
+  width: 100%;
+  max-width: 1004px;
+  height: 960px;
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  background-image: url(../../assets/images/login-back.png);
+  background-repeat: no-repeat;
+}

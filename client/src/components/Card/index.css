@@ -38,6 +38,7 @@
 }
 
 .card__img {
+  margin-left: 24px;
   width: 240px;
   height: 240px;
   border-radius: 50px 10px;

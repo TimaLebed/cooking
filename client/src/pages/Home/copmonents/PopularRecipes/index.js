@@ -18,7 +18,6 @@ function PopularRecipes() {
 
     fetchCards();
   }, []);
-  console.log(data)
 
   return (
     <div className="recipes-wrapper">
