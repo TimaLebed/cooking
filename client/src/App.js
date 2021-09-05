@@ -1,4 +1,5 @@
 import React from "react";
+import { Global } from '@emotion/react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -7,25 +8,28 @@ import {
 import Header from './components/Header';
 import Home from './pages/Home';
 import Login from "./pages/LogIn";
-import './App.css';
 
+import { globalStyles } from './App.styled';
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Switch>
-          <Route exact path="/">
-            <Header></Header>
-            <Home></Home>
-          </Route>
-          <Route path="/login">
-            <Login></Login>
-          </Route>
-        </Switch>
-      </div>
-    </Router>
-  );
+    <>
+      <Router>
+        <div className="App">
+          <Switch>
+            <Route exact path="/">
+              <Header></Header>
+              <Home></Home>
+            </Route>
+            <Route path="/login">
+              <Login></Login>
+            </Route>
+          </Switch>
+        </div>
+      </Router>
+      <Global styles={globalStyles} />
+    </>
+    );
 }
 
 export default App;

@@ -1,9 +1,10 @@
 import React from "react";
-import "./index.css";
 
-function Button({ children }) {
+import { StyledButton } from "./Button.styled";
+
+function Button(props) {
   return (
-    <button className="btn" type="button">{ children }</button>
+    <StyledButton {...props}>{ props.children }</StyledButton>
   )
 }
 
