@@ -8,13 +8,6 @@
 	src: url(../../assets/fonts/Montserrat/Montserrat-SemiBold.ttf);
 }
 
-.card {
-  width: 288px;
-  height: 414px;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-}
-
 .card__views {
   margin: 24px 0 16px 48px;
   position: relative;
@@ -35,14 +28,6 @@
   left: -25px;
   top: 4px;
   transition: all 0.3s;
-}
-
-.card__img {
-  margin-left: 24px;
-  width: 240px;
-  height: 240px;
-  border-radius: 50px 10px;
-  /* background-image: url('../../assets/images/fish.png'); */
 }
 
 .card__title {
@@ -87,16 +72,4 @@
   left: -27px;
   top: 2px;
   transition: all 0.3s;
-}
-
-.wrapper-title-author,.wrapper-likes-comments {
-  display: flex;
-  justify-content: space-between;
-  width: 240px;
-  margin: 16px auto 32px;
-}
-
-.wrapper-likes-comments {
-  margin: 0 auto;
-  justify-content: flex-start;
 }

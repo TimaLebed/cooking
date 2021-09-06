@@ -22,17 +22,17 @@ function TrendingRecipes() {
   return (
     <div className="trending-wrapper">
       <div className="trending-context">
-        <p className="trending-suptitle">Our choice</p>
-        <h2 className="trending-title">Most Popular CookBooks</h2>
+        <p className="trending-suptitle">Top 10</p>
+        <h2 className="trending-title">Trending Recepies</h2>
         <div className="trending-cards">
-        {data.cards.map((item) => (
-            <Card card={item}></Card>
-          ))}
-          {/* <Card card={data.cards[0]}></Card> */}
-          {/* <Card card={data.cards[0]}></Card> */}
-          {/* <Card card={data.cards[0]}></Card> */}
+        {data.cards.map((item, index) => {
+          if(index === 3) return null;
+          return <Card trending card={item}></Card>
+          })}
         </div>
-        <div className="swiper-pagination"></div>
+        <button className="slider__btn-left">&lt;</button>
+        <button className="slider__btn-right">&gt;</button>
+        <div className="slider-pagination"></div>
         <Button>Show All Recipies</Button>
       </div>
     </div>
