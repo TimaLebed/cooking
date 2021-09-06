@@ -24,8 +24,12 @@
 	line-height: 33px;
 }
 
-.logo__title span:first-child {
+.logo-header {
 	color: #181818;
+}
+
+.logo-footer {
+	color: #fff;
 }
 
 .logo__title span:last-child {

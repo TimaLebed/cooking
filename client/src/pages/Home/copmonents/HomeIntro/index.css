@@ -17,6 +17,7 @@
   height: 814px;
   width: 100%;
   max-width: 1616px;
+  margin: 0 auto;
   background-image: url(../../../../assets/images/home.png);
   background-position: center;
   background-repeat: no-repeat;

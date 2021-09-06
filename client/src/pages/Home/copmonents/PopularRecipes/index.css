@@ -12,6 +12,7 @@
   height: 780px;
   width: 100%;
   max-width: 1616px;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: flex-end;
