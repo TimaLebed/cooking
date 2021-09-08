@@ -1,28 +1,36 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../Logo";
-import "./index.css";
+import {
+  LoginWrapper,
+  LoginTitle,
+  LoginSubtitle,
+  InputField,
+  Input,
+  Label,
+  Button
+} from "./Sign.styled";
 
 
 function Sign() {
   return (
-    <div className="login">
+    <LoginWrapper>
       <Logo></Logo>
-      <h2 className="login__title">Welcome back</h2>
-      <p className="login__subtitle">
+      <LoginTitle>Welcome back</LoginTitle>
+      <LoginSubtitle>
         New here?
         <Link to="/" className="login__create-link">Create an account</Link>
-      </p>
-      <div className="login__input-field">
-        <input id="email" type="text" name="email" className="login__input"></input>
-        <label htmlFor="email" className="login__label">Email</label>
-      </div>
-      <div className="login__input-field">
-        <input id="password" type="password" name="password" className="login__input"></input>
-        <label htmlFor="password" className="login__label">Password</label>
-      </div>
-      <button type="button" className="login__btn">Sign In</button>
-    </div>
+      </LoginSubtitle>
+      <InputField>
+        <Input id="email" type="text" name="email"></Input>
+        <Label htmlFor="email">Email</Label>
+      </InputField>
+      <InputField>
+        <Input id="password" type="password" name="password"></Input>
+        <Label htmlFor="password">Password</Label>
+      </InputField>
+      <Button type="button">Sign In</Button>
+    </LoginWrapper>
   )
 }
 

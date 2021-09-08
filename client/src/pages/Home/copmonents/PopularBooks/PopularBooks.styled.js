@@ -1,19 +1,7 @@
-@font-face {
-	font-family: "Nunito-Regular";
-	src: url(../../../../assets/fonts/Nunito_Sans/NunitoSans-Regular.ttf);
-}
+import styled from "@emotion/styled";
+import { css } from '@emotion/react';
 
-@font-face {
-	font-family: "Montserrat-Bold";
-	src: url(../../../../assets/fonts/Montserrat/Montserrat-Bold.ttf);
-}
-
-@font-face {
-	font-family: "Nunito-Bold";
-	src: url(../../../../assets/fonts/Nunito_Sans/NunitoSans-Bold.ttf);
-}
-
-.books-wrapper {
+export const BooksWrapper = styled.div`
   height: 1034px;
   width: 100%;
   max-width: 1616px;
@@ -21,9 +9,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
+`;
 
-.books-context {
+export const BooksContent = styled.div`
   height: 802px;
   width: 100%;
   max-width: 1224px;
@@ -31,18 +19,18 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-}
+`;
 
-.books-suptitle {
+export const BooksSuptitle = styled.p`
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #FFBC01;
   font-family: "Nunito-Regular", sans-serif;
-}
+`;
 
-.books-title {
+export const BooksTitle = styled.h2`
   width: 1110px;
   height: 48px;
   font-size: 40px;
@@ -50,45 +38,45 @@
   color: #181818;
 	font-family: "Montserrat-Bold", sans-serif;
   text-align: center;
-}
+`;
 
-.books-cards {
+export const BooksCards = styled.div`
   width: 1224px;
   height: 540px;
   display: flex;
   justify-content: space-between;
-}
+`;
 
-.books-cards__card {
+export const Card = styled.div`
   width: 288px;
   height: 258px;
   /* filter: drop-shadow(0px 0px 32px rgba(0, 0, 0, 0.24)); */
   border-radius: 50px 10px;
   position: relative;
-}
 
-.books-cards__card.large {
-  width: 600px;
-  height: 540px;
-  /* background: url(../../../../assets/images/books/all-pancakes.png), linear-gradient(to top, rgba(255,0,0,0.3), rgba(255,0,0,0.3)); */
-  background-image: url(../../../../assets/images/books/all-pancakes.png);
-}
+  ${props => props.large && css`
+    width: 600px;
+    height: 540px;
+    /* background: url(../../../../assets/images/books/all-pancakes.png), linear-gradient(to top, rgba(255,0,0,0.3), rgba(255,0,0,0.3)); */
+    background-image: url(../../../../assets/images/books/all-pancakes.png);
+  `}
 
-.books-cards__card.medium {
-  width: 600px;
-  height: 258px;
-  background-image: url(../../../../assets/images/books/icecream.png);
-}
+  ${props => props.medium && css`
+    width: 600px;
+    height: 258px;
+    background-image: url(../../../../assets/images/books/icecream.png);
+  `}
 
-.books-cards__card.left {
-  background-image: url(../../../../assets/images/books/fast-breakfast.png);
-}
+  ${props => props.left && css`
+    background-image: url(../../../../assets/images/books/fast-breakfast.png);
+  `}
 
-.books-cards__card.right {
-  background-image: url(../../../../assets/images/books/fruit-veg.png);
-}
+  ${props => props.right && css`
+    background-image: url(../../../../assets/images/books/fruit-veg.png);
+  `}
+`;
 
-.container-three-cards {
+export const ContainerThreeCards = styled.div`
   width: 600px;
   height: 540px;
   display: flex;
@@ -96,11 +84,9 @@
   justify-content: space-between;
   flex-wrap: wrap;
   align-content: space-between;
-}
+`;
 
-.books-cards-btn {
-  /* max-width: 225px;
-  max-height: 54px; */
+export const CardButton = styled.button`
   position: absolute;
   left: 24px;
   bottom: 24px;
@@ -115,9 +101,9 @@
   line-height: 22px;
 	font-family: "Nunito-Bold", sans-serif;
   cursor: pointer;
-}
+`;
 
-.edit-btn {
+export const ButtonEdit = styled.button`
   width: 19px;
   height: 10px;
   position: absolute;
@@ -131,4 +117,4 @@
   background-size: cover;
   background-repeat: no-repeat;
   cursor: pointer;
-}
+`;

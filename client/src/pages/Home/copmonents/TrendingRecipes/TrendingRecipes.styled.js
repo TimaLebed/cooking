@@ -1,19 +1,7 @@
-@font-face {
-	font-family: "Nunito-Regular";
-	src: url(../../../../assets/fonts/Nunito_Sans/NunitoSans-Regular.ttf);
-}
+import styled from "@emotion/styled";
+import { css } from '@emotion/react';
 
-@font-face {
-	font-family: "Montserrat-Bold";
-	src: url(../../../../assets/fonts/Montserrat/Montserrat-Bold.ttf);
-}
-
-@font-face {
-	font-family: "Nunito-Bold";
-	src: url(../../../../assets/fonts/Nunito_Sans/NunitoSans-Bold.ttf);
-}
-
-.trending-wrapper {
+export const TrendingWrapper = styled.div`
   height: 986px;
   width: 100%;
   max-width: 1616px;
@@ -22,9 +10,9 @@
   justify-content: center;
   align-items: center;
   background-image: url(../../../../assets/images/trending-back.png);
-}
+`;
 
-.trending-context {
+export const TrendingContent = styled.div`
   height: 778px;
   width: 100%;
   max-width: 1224px;
@@ -33,18 +21,18 @@
   align-items: center;
   justify-content: space-between;
   position: relative;
-}
+`;
 
-.trending-suptitle {
+export const TrendingSuptitle = styled.p`
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #FFFFFF;
   font-family: "Nunito-Regular", sans-serif;
-}
+`;
 
-.trending-title {
+export const TrendingTitle = styled.h2`
   width: 1110px;
   height: 48px;
   font-size: 40px;
@@ -52,21 +40,16 @@
   color: #181818;
 	font-family: "Montserrat-Bold", sans-serif;
   text-align: center;
-}
+`;
 
-.trending-cards {
+export const CardsSlider = styled.div`
   width: 1224px;
   height: 460px;
   display: flex;
   justify-content: space-between;
-}
+`;
 
-.slider-pagination {
-  width: 64px;
-  height: 16px;
-}
-
-.slider__btn-left, .slider__btn-right {
+export const Arrow = styled.button`
   position: absolute;
   top: 43%;
   font-size: 80px;
@@ -74,12 +57,18 @@
   border: 0;
   outline: none;
   color: #FFF;
-}
 
-.slider__btn-left {
-  left: -7%;
-}
+  ${props => props.left && css`
+    left: -7%;
+  `}
 
-.slider__btn-right {
-  right: -7%;
-}
+  ${props => props.right && css`
+    right: -7%;
+  `}
+`;
+
+export const CardsPagination = styled.div`
+  width: 64px;
+  height: 16px;
+  border: 1px solid #181818;
+`;

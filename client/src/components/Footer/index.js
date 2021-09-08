@@ -1,21 +1,28 @@
 import React from "react";
 import Logo from "../Logo";
-import "./index.css";
+// import "./index.css";
+import {
+  FooterWrapper,
+  FooterInner,
+  FooterNav,
+  FooterLinkEmail,
+  FooterAuthor
+} from './Footer.styled'
 
 function Footer() {
   return (
-    <footer className="footer">
-      <div className="footer-inner">
+    <FooterWrapper>
+      <FooterInner>
         <Logo footer></Logo>
-        <nav className="footer-nav">
-          <a href="#" className="footer-nav__element">Cookbooks</a>
-          <a href="#" className="footer-nav__element">Recepies</a>
-          <a href="#" className="footer-nav__element">About Us</a>
-        </nav>
-        <a href="mailto:plzfeedme@itechart.com" className="footer__email-link">plzfeedme@itechart.com</a>
-        <p className="footer__author">Study Project v2, 2021 <span>i:TechArt</span></p>
-      </div>
-    </footer>
+        <FooterNav>
+          <a href="#">Cookbooks</a>
+          <a href="#">Recepies</a>
+          <a href="#">About Us</a>
+        </FooterNav>
+        <FooterLinkEmail href="mailto:plzfeedme@itechart.com">plzfeedme@itechart.com</FooterLinkEmail>
+        <FooterAuthor>Study Project v2, 2021 <span>i:TechArt</span></FooterAuthor>
+      </FooterInner>
+    </FooterWrapper>
   );
 }
 

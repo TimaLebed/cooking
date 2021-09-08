@@ -1,19 +1,7 @@
-@font-face {
-	font-family: "Montserrat-SemiBold";
-	src: url(../../../../assets/fonts/Montserrat/Montserrat-SemiBold.ttf);
-}
+import styled from "@emotion/styled";
+import { css } from '@emotion/react';
 
-@font-face {
-	font-family: "Nunito-Bold";
-	src: url(../../../../assets/fonts/Nunito_Sans/NunitoSans-Bold.ttf);
-}
-
-@font-face {
-	font-family: "Nunito-Regular";
-	src: url(../../../../assets/fonts/Nunito_Sans/NunitoSans-Regular.ttf);
-}
-
-.home-wrapper {
+export const HomeWrapper = styled.div`
   height: 814px;
   width: 100%;
   max-width: 1616px;
@@ -24,27 +12,27 @@
   background-size: cover;
   display: flex;
   justify-content: center;
-}
+`;
 
-.home-inner {
+export const HomeInner = styled.div`
   height: 814px;
   width: 100%;
   max-width: 1100px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-}
+`;
 
-.home-content {
+export const HomeContent = styled.div`
   height: 328px;
   width: 100%;
   max-width: 1016px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
+`;
 
-.home-title {
+export const HomeTitle = styled.h1`
   width: 808px;
   height: 144px;
   font-size: 56px;
@@ -52,33 +40,32 @@
   line-height: 72px;
   color: #FFFFFF;
 	font-family: "Montserrat-SemiBold", sans-serif;
-}
+`;
 
-.home-search {
+export const Form = styled.form`
   position: relative;
-}
+`;
 
-.home-search__input {
+export const Input = styled.input`
   width: 1016px;
   height: 70px;
   color: #494949;
   background-color: #F7F7F7;
   font-size: 18px;
 	font-family: "Nunito-Regular", sans-serif;
-  /* padding: 6px 8px; */
   padding-left: 64px;
   border-radius: 10px;
   outline: none;
-  border: none;
-}
+  border: none;position: relative;
 
-.home-search__input:focus {
-  border-color: #2188ff;
-  outline: none;
-  box-shadow: inset 0 1px 2px rgba(27,31,35,0.075), 0 0 0 0.2em rgba(3,102,214,0.3);
-}
+  &:focus {
+    border-color: #2188ff;
+    outline: none;
+    box-shadow: inset 0 1px 2px rgba(27,31,35,0.075), 0 0 0 0.2em rgba(3,102,214,0.3);
+  }
+`;
 
-.home-search__icon {
+export const Svg = styled.svg`
   fill: currentcolor;
   position: absolute;
   width: 22px;
@@ -87,20 +74,16 @@
   left: 25px;
   display: block;
   color: rgb(198, 203, 209);
-}
+`;
 
-.home-nav {
+export const HomeNav = styled.nav`
   width: 821px;
   height: 33px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.home-nav__element {
-  text-decoration: none;
   font-size: 18px;
   line-height: 22px;
   color: #FFFFFF;
 	font-family: "Nunito-Regular", sans-serif;
-}
+`;

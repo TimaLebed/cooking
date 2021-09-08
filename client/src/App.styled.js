@@ -1,6 +1,7 @@
 import { css } from '@emotion/react';
 
 import MontserratSemiBold from "./assets/fonts/Montserrat/Montserrat-SemiBold.ttf"
+import MontserratBold from "./assets/fonts/Montserrat/Montserrat-Bold.ttf"
 import NunitoBold from "./assets/fonts/Nunito_Sans/NunitoSans-Bold.ttf"
 import NunitoRegular from "./assets/fonts/Nunito_Sans/NunitoSans-Regular.ttf"
 
@@ -13,6 +14,12 @@ export const globalStyles = css`
   @font-face {
     font-family: "Montserrat-SemiBold";
     src: url(${MontserratSemiBold}) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Montserrat-Bold";
+    src: url(${MontserratBold}) format("truetype");
     font-weight: normal;
     font-style: normal;
   }
@@ -30,5 +37,6 @@ export const globalStyles = css`
   }
   a {
     text-decoration: none;
+    color: inherit;
   }
 `;

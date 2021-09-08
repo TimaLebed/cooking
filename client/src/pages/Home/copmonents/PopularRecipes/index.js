@@ -1,7 +1,14 @@
 import React, {useState, useEffect} from "react";
 import Card from "../../../../components/Card";
 import Button from "../../../../components/Button"
-import "./index.css";
+// import "./index.css";
+import {
+  RecipesWrapper,
+  RecipesContent,
+  RecipesSuptitle,
+  RecipesTitle,
+  CardsContainer
+} from "./PopularRecipes.styled";
 
 const urlCards = './dataCards.json';
 
@@ -19,19 +26,21 @@ function PopularRecipes() {
     fetchCards();
   }, []);
 
+  const cards = data.cards.map((item) => (
+    <Card key={item.id} card={item}></Card>
+  ));
+
   return (
-    <div className="recipes-wrapper">
-      <div className="recipes-context">
-        <p className="recipes-suptitle">users choice</p>
-        <h2 className="recipes-title">20 Highest-Rated Recipes</h2>
-        <div className="recipes-cards">
-          {data.cards.map((item) => (
-            <Card card={item}></Card>
-          ))}
-        </div>
+    <RecipesWrapper>
+      <RecipesContent>
+        <RecipesSuptitle>users choice</RecipesSuptitle>
+        <RecipesTitle>20 Highest-Rated Recipes</RecipesTitle>
+        <CardsContainer>
+          {cards}
+        </CardsContainer>
         <Button>Show More</Button>
-      </div>
-    </div>
+      </RecipesContent>
+    </RecipesWrapper>
   )
 }
 

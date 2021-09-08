@@ -4,16 +4,16 @@ import PopularRecipes from "./copmonents/PopularRecipes";
 import PopularBooks from "./copmonents/PopularBooks";
 import TrendingRecipes from "./copmonents/TrendingRecipes";
 
-import "./index.css";
+import { Wrapper } from "./index.styled";
 
 function Home() {
   return (
-    <div className="home-page__wrapper">
+    <Wrapper>
       <HomeIntro></HomeIntro>
       <PopularRecipes></PopularRecipes>
       <PopularBooks></PopularBooks>
       <TrendingRecipes></TrendingRecipes>
-    </div>
+    </Wrapper>
   )
 }
 

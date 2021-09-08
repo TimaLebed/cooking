@@ -1,15 +1,19 @@
 import React from "react";
-import "./index.css";
+import {
+  LogoWrapper,
+  LogoImg,
+  LogoTitle
+} from "./Logo.styled";
 
 function Logo(props) {
   return (
-    <div className="logo">
-      <div className="logo__img"></div>
-      <div className="logo__title">
-        <span className={`${props.footer ? "logo-footer" : "logo-header"}`}>Feed</span>
+    <LogoWrapper>
+      <LogoImg></LogoImg>
+      <LogoTitle {...props}>
+        <span>Feed</span>
         <span>me</span>
-      </div>
-    </div>
+      </LogoTitle>
+    </LogoWrapper>
   );
 }
 

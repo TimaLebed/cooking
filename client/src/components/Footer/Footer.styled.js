@@ -1,4 +1,7 @@
-.footer {
+import styled from "@emotion/styled";
+import { css } from '@emotion/react';
+
+export const FooterWrapper = styled.footer`
   width: 100%;
   height: 97px;
   max-width: 1680px;
@@ -6,17 +9,17 @@
   align-items: center;
   justify-content: center;
   background-color: #181818;
-}
+`;
 
-.footer-inner {
+export const FooterInner = styled.div`
   width: 100%;
   max-width: 1224px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
+`;
 
-.footer-nav {
+export const FooterNav = styled.nav`
   width: 100%;
   height: 23px;
   max-width: 357px;
@@ -24,28 +27,25 @@
   align-items: center;
   justify-content: space-between;
 	font-family: "Nunito-Regular" , sans-serif;
-}
-
-.footer-nav__element{
   text-decoration: none;
   line-height: 22px;
   color: #F7F7F7;
-}
+`;
 
-.footer__email-link {
+export const FooterLinkEmail = styled.a`
   font-size: 16px;
   line-height: 22px;
   color: #FFBC01;
 	font-family: "Nunito-Regular" , sans-serif;
-}
+`;
 
-.footer__author {
+export const FooterAuthor = styled.p`
   line-height: 22px;
   color: #DADADA;
 	font-family: "Nunito-Regular" , sans-serif;
-}
 
-.footer__author span {
-  margin-left: 16px;
-	font-family: "Nunito-Bold" , sans-serif;
-}
+  &span {
+    margin-left: 16px;
+	  font-family: "Nunito-Bold" , sans-serif;
+  }
+`;

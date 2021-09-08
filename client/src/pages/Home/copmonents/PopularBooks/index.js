@@ -1,36 +1,46 @@
 import React from "react";
 import Button from "../../../../components/Button"
-import "./index.css";
+import {
+  BooksWrapper,
+  BooksContent,
+  BooksSuptitle,
+  BooksTitle,
+  BooksCards,
+  Card,
+  ContainerThreeCards,
+  CardButton,
+  ButtonEdit
+} from "./PopularBooks.styled";
 
 function PopularBooks() {
   return (
-    <div className="books-wrapper">
-      <div className="books-context">
-        <p className="books-suptitle">Our choice</p>
-        <h2 className="books-title">Most Popular CookBooks</h2>
-        <div className="books-cards">
-          <div className="books-cards__card large">
-            <button className="books-cards-btn" type="button">Its All About Pancakes</button>
-            <button className="edit-btn" type="button"></button>
-          </div>
-          <div className="container-three-cards">
-            <div className="books-cards__card medium">
-              <button className="books-cards-btn" type="button">Iccceeesream Dream</button>
-              <button className="edit-btn" type="button"></button>
-            </div>
-            <div className="books-cards__card left">
-              <button className="books-cards-btn" type="button">Fast Breakfast</button>
-              <button className="edit-btn" type="button"></button>
-            </div>
-            <div className="books-cards__card right">
-              <button className="books-cards-btn" type="button">Fruits and Vegetables</button>
-              <button className="edit-btn" type="button"></button>
-            </div>
-          </div>
-        </div>
+    <BooksWrapper>
+      <BooksContent>
+        <BooksSuptitle>Our choice</BooksSuptitle>
+        <BooksTitle>Most Popular CookBooks</BooksTitle>
+        <BooksCards>
+          <Card large>
+            <CardButton type="button">Its All About Pancakes</CardButton>
+            <ButtonEdit type="button"></ButtonEdit>
+          </Card>
+          <ContainerThreeCards>
+            <Card medium>
+              <CardButton type="button">Iccceeesream Dream</CardButton>
+              <ButtonEdit type="button"></ButtonEdit>
+            </Card>
+            <Card left>
+              <CardButton type="button">Fast Breakfast</CardButton>
+              <ButtonEdit type="button"></ButtonEdit>
+            </Card>
+            <Card right>
+              <CardButton type="button">Fruits and Vegetables</CardButton>
+              <ButtonEdit type="button"></ButtonEdit>
+            </Card>
+          </ContainerThreeCards>
+        </BooksCards>
         <Button>Show More</Button>
-      </div>
-    </div>
+      </BooksContent>
+    </BooksWrapper>
   )
 }
 

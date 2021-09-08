@@ -1,14 +1,16 @@
 import React from "react";
 import Sign from "../../components/Sign";
-import "./index.css";
-
+import {
+  LoginWrapper,
+  LoginBackground,
+} from "./Login.styled";
 
 function Login() {
   return (
-    <div className="login-wrapper">
-      <div className="login-background"></div>
+    <LoginWrapper>
+      <LoginBackground></LoginBackground>
       <Sign></Sign>
-    </div>
+    </LoginWrapper>
   )
 }
 

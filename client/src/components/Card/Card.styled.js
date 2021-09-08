@@ -10,9 +10,47 @@ export const CardWrapper = styled.div`
   background-color: #FFF;
 
   ${props => props.trending && css`
-  width: 392px;
-  height: 460px;
+    width: 392px;
+    height: 460px;
   `}
+`;
+
+export const CardViews = styled.p`
+  margin: 24px 0 16px 48px;
+  position: relative;
+  font-size: 14px;
+  line-height: 19px;
+  color: #181818;
+	font-family: "Nunito-Regular", sans-serif;
+  text-align: left;
+
+  &:before {
+    content: "";
+    background-image: url('../../assets/icons/views.svg');
+    display: block;
+    width: 16px;
+    height: 11px;
+    position: absolute;
+    left: -25px;
+    top: 4px;
+    transition: all 0.3s;
+  }
+`;
+
+export const ButtonEdit = styled.button`
+  width: 19px;
+  height: 10px;
+  position: absolute;
+  right: 24px;
+  top: 28px;
+  border: none;
+  outline: none;
+  background-image: url(../../../../assets/icons/edit.svg);
+  background-color: initial;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
 `;
 
 export const CardImg = styled.img`
@@ -25,8 +63,8 @@ export const CardImg = styled.img`
   background-size: contain;
 
   ${props => props.trending && css`
-  width: 344px;
-  height: 344px;
+    width: 344px;
+    height: 344px;
   `}
 `;
 
@@ -38,9 +76,25 @@ export const WrapperTitleAuthor = styled.div`
   margin: 16px auto 32px;
 
   ${props => props.trending && css`
-  margin: 16px auto 0px;
-  width: 344px
+    margin: 16px auto 0px;
+    width: 344px
   `}
+`;
+
+export const CardTitle = styled.p`
+  font-size: 20px;
+  line-height: 24px;
+  color: #181818;
+	font-family: "Montserrat-SemiBold", sans-serif;
+  text-align: left;
+`;
+
+export const CardAuthor = styled.p`
+  position: relative;
+  font-size: 14px;
+  line-height: 19px;
+  color: #181818;
+  font-family: "Nunito-Regular", sans-serif;
 `;
 
 export const WrapperLikesComments = styled.div`
@@ -51,6 +105,47 @@ export const WrapperLikesComments = styled.div`
   margin: 0 auto;
 
   ${props => props.trending && css`
-  display: none;
+    display: none;
   `}
+`;
+
+export const CardLikes = styled.p`
+  margin: 0 47px 0 25px;
+  position: relative;
+  font-size: 14px;
+  line-height: 19px;
+  color: #181818;
+  font-family: "Nunito-Regular", sans-serif;
+
+  &:before {
+    content: "";
+    background-image: url('../../assets/icons/likes.svg');
+    display: block;
+    width: 17px;
+    height: 15px;
+    position: absolute;
+    left: -27px;
+    top: 2px;
+    transition: all 0.3s;
+  }
+`;
+
+export const CardComments = styled.p`
+  position: relative;
+  font-size: 14px;
+  line-height: 19px;
+  color: #181818;
+  font-family: "Nunito-Regular", sans-serif;
+
+  &:before {
+    content: "";
+    background-image: url('../../assets/icons/comments.svg');
+    display: block;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    left: -27px;
+    top: 2px;
+    transition: all 0.3s;
+  }
 `;

@@ -1,26 +1,26 @@
-/* @font-face {
-	font-family: "Nunito-Regular";
-	src: url(../../assets/fonts/Nunito_Sans/NunitoSans-Regular.ttf);
-} */
+import styled from "@emotion/styled";
+import { css } from '@emotion/react';
 
-.header {
+export const HeaderWrapper = styled.header`
   width: 100%;
   height: 88px;
   max-width: 1680px;
   display: flex;
   align-items: center;
   justify-content: center;
-}
+`;
 
-.header-inner {
+export const HeaderInner = styled.div`
   width: 100%;
   max-width: 1100px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
+  color: #181818;
+	font-family: "Nunito-Regular" , sans-serif;
+`;
 
-.header-nav {
+export const HeaderNav = styled.nav`
   width: 100%;
   height: 22px;
   max-width: 217px;
@@ -28,19 +28,15 @@
   align-items: center;
   justify-content: space-between;
 	font-family: "Nunito-Regular" , sans-serif;
-}
-
-.header-nav__element{
-  text-decoration: none;
   line-height: 22px;
   color: #181818;
-}
+`;
 
-.header-search {
+export const HeaderForm = styled.form`
   position: relative;
-}
+`;
 
-.header-search__input {
+export const HeaderInput = styled.input`
   font-family: inherit;
   width: 284px;
   height: 40px;
@@ -52,26 +48,19 @@
   border-radius: 10px;
   outline: none;
   border: none;
-}
 
-.header-search__input:focus {
-  border-color: #2188ff;
-  outline: none;
-  box-shadow: inset 0 1px 2px rgba(27,31,35,0.075), 0 0 0 0.2em rgba(3,102,214,0.3);
-}
+  &:focus {
+    border-color: #2188ff;
+    outline: none;
+    box-shadow: inset 0 1px 2px rgba(27,31,35,0.075), 0 0 0 0.2em rgba(3,102,214,0.3);
+  }
+`;
 
-.header-search__icon {
+export const HeaderIcon = styled.svg`
   fill: currentcolor;
   position: absolute;
   top: 12px;
   left: 16px;
   display: block;
   color: rgb(198, 203, 209);
-}
-
-.sign-in {
-  text-decoration: none;
-  line-height: 22px;
-  color: #181818;
-	font-family: "Nunito-Regular" , sans-serif;
-}
+`;

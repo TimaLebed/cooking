@@ -1,14 +1,7 @@
-@font-face {
-	font-family: "Nunito-Regular";
-	src: url(../../../../assets/fonts/Nunito_Sans/NunitoSans-Regular.ttf);
-}
+import styled from "@emotion/styled";
+import { css } from '@emotion/react';
 
-@font-face {
-	font-family: "Montserrat-Bold";
-	src: url(../../../../assets/fonts/Montserrat/Montserrat-Bold.ttf);
-}
-
-.recipes-wrapper {
+export const RecipesWrapper = styled.div`
   height: 780px;
   width: 100%;
   max-width: 1616px;
@@ -16,9 +9,9 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
-}
+`;
 
-.recipes-context {
+export const RecipesContent = styled.div`
   height: 676px;
   width: 100%;
   max-width: 1224px;
@@ -27,18 +20,18 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-}
+`;
 
-.recipes-suptitle {
+export const RecipesSuptitle = styled.p`
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #FFBC01;
   font-family: "Nunito-Regular", sans-serif;
-}
+`;
 
-.recipes-title {
+export const RecipesTitle = styled.h2`
   width: 1110px;
   height: 48px;
   font-size: 40px;
@@ -46,11 +39,11 @@
   color: #181818;
 	font-family: "Montserrat-Bold", sans-serif;
   text-align: center;
-}
+`;
 
-.recipes-cards {
+export const CardsContainer = styled.div`
   width: 1224px;
   height: 414px;
   display: flex;
   justify-content: space-between;
-}
+`;

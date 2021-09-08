@@ -1,24 +1,7 @@
-@font-face {
-	font-family: "Montserrat-Bold";
-	src: url(../../assets/fonts/Montserrat/Montserrat-Bold.ttf);
-}
+import styled from "@emotion/styled";
+import { css } from '@emotion/react';
 
-@font-face {
-	font-family: "Nunito-SemiBold";
-	src: url(../../assets/fonts/Nunito_Sans/NunitoSans-SemiBold.ttf);
-}
-
-@font-face {
-	font-family: "Nunito-Bold";
-	src: url(../../assets/fonts/Nunito_Sans/NunitoSans-Bold.ttf);
-}
-
-@font-face {
-	font-family: "Nunito-Regular";
-	src: url(../../assets/fonts/Nunito_Sans/NunitoSans-Regular.ttf);
-}
-
-.login {
+export const LoginWrapper = styled.div`
   width: 600px;
   height: 654px;
   padding-left: 56px;
@@ -28,37 +11,37 @@
   margin-left: 13.6%;
   z-index: 2;
   border-radius: 50px 10px;
-}
+`;
 
-.login__title {
+export const LoginTitle = styled.h2`
   margin-top: 48px;
   font-size: 40px;
   line-height: 48px;
   color: #181818;
   font-family: "Montserrat-Bold", sans-serif;
-}
+`;
 
-.login__subtitle {
+export const LoginSubtitle = styled.p`
   margin-top: 8px;
   font-size: 16px;
   line-height: 22px;
 	font-family: "Nunito-SemiBold", sans-serif;
   color: #181818;
-}
 
-.login__create-link {
-  color: #FFBC01;
-	font-family: "Nunito-Regular", sans-serif;
-  text-decoration: none;
-  margin-left: 10px;
-}
+  & :last-child{
+    color: #FFBC01;
+    font-family: "Nunito-Regular", sans-serif;
+    text-decoration: none;
+    margin-left: 10px;
+  }
+`;
 
-.login__input-field {
+export const InputField = styled.div`
   margin-top: 60px;
   position: relative;
-}
+`;
 
-.login__input {
+export const Input = styled.input`
   width: 488px;
   height: 54px;
   color: #494949;
@@ -68,16 +51,17 @@
   border: 1px solid #DADADA;
   border-radius: 8px;
   outline: none;
-}
+`;
 
-.login__label {
+export const Label = styled.label`
   position: absolute;
   top: -30px;
   color: #494949;
   left: 0;
-}
+  font-family: "Nunito-Regular", sans-serif;
+`;
 
-.login__btn {
+export const Button = styled.button`
   width: 488px;
   height: 54px;
   margin-top: 56px;
@@ -89,4 +73,4 @@
   font-family: "Nunito-Bold", sans-serif;
   outline: none;
   border: 0;
-}
+`;
