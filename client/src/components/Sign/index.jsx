@@ -33,7 +33,7 @@ function Sign(props) {
         <Input id="confirm" type="password" name="confirm"></Input>
         <Label htmlFor="confirm">Confirm Password</Label>
       </InputField>
-      <Button type="button">Sign In</Button>
+      <Button type="button">{props.hiddenConfirm ? "Sign In" : "Sign Up"}</Button>
     </LoginWrapper>
   )
 }
