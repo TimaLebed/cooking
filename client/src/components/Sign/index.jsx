@@ -12,9 +12,9 @@ import {
 } from "./Sign.styled";
 
 
-function Sign() {
+function Sign(props) {
   return (
-    <LoginWrapper>
+    <LoginWrapper {...props}>
       <Logo></Logo>
       <LoginTitle>Welcome back</LoginTitle>
       <LoginSubtitle>
@@ -28,6 +28,10 @@ function Sign() {
       <InputField>
         <Input id="password" type="password" name="password"></Input>
         <Label htmlFor="password">Password</Label>
+      </InputField>
+      <InputField {...props}>
+        <Input id="confirm" type="password" name="confirm"></Input>
+        <Label htmlFor="confirm">Confirm Password</Label>
       </InputField>
       <Button type="button">Sign In</Button>
     </LoginWrapper>

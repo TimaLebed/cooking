@@ -9,7 +9,7 @@ import Header from './components/Header';
 import Home from './pages/Home';
 import Footer from "./components/Footer";
 import Login from "./pages/LogIn";
-// import "../src/pages/Home/copmonents/PopularRecipes/dataCards.json"
+import SignUp from "./pages/SignUp";
 
 import { globalStyles } from './App.styled';
 
@@ -26,6 +26,7 @@ function App() {
             </Route>
             <Route path="/login">
               <Login></Login>
+              {/* <SignUp></SignUp> */}
             </Route>
           </Switch>
         </div>

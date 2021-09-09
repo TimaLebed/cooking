@@ -2,8 +2,8 @@ import styled from "@emotion/styled";
 import { css } from '@emotion/react';
 
 export const LoginWrapper = styled.div`
+  height: 767px;
   width: 600px;
-  height: 654px;
   padding-left: 56px;
   padding-top: 56px;
   background-color: #fff;
@@ -11,6 +11,10 @@ export const LoginWrapper = styled.div`
   margin-left: 13.6%;
   z-index: 2;
   border-radius: 50px 10px;
+
+  ${props => props.hiddenConfirm && css`
+    height: 654px;
+  `}
 `;
 
 export const LoginTitle = styled.h2`
@@ -39,6 +43,10 @@ export const LoginSubtitle = styled.p`
 export const InputField = styled.div`
   margin-top: 60px;
   position: relative;
+
+  ${props => props.hiddenConfirm && css`
+    display: none;
+  `}
 `;
 
 export const Input = styled.input`

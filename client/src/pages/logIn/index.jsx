@@ -9,7 +9,7 @@ function Login() {
   return (
     <LoginWrapper>
       <LoginBackground></LoginBackground>
-      <Sign></Sign>
+      <Sign hiddenConfirm></Sign>
     </LoginWrapper>
   )
 }
