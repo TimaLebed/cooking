@@ -14,9 +14,13 @@ import {
 } from "./Card.styled";
 
 function Card(props) {
+  const randomNumber = (n) => (
+    Math.floor(Math.random() * n)
+  );
+
   return (
     <CardWrapper {...props}>
-      <CardViews>{props.card.views} views</CardViews>
+      <CardViews>{randomNumber(90000)} views</CardViews>
       <ButtonEdit></ButtonEdit>
       <CardImg {...props} alt=""></CardImg>
       <WrapperTitleAuthor {...props}>
@@ -24,8 +28,8 @@ function Card(props) {
         <CardAuthor>{props.card.author}</CardAuthor>
       </WrapperTitleAuthor>
       <WrapperLikesComments {...props}>
-        <CardLikes>{props.card.likes} likes</CardLikes>
-        <CardComments>{props.card.comments} comments</CardComments>
+        <CardLikes>{randomNumber(1000)} likes</CardLikes>
+        <CardComments>{randomNumber(300)} comments</CardComments>
       </WrapperLikesComments>
     </CardWrapper>
   )

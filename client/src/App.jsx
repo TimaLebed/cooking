@@ -10,6 +10,7 @@ import Home from './pages/Home';
 import Footer from "./components/Footer";
 import Login from "./pages/LogIn";
 import SignUp from "./pages/SignUp";
+import Search from "./pages/Search";
 
 import { globalStyles } from './App.styled';
 
@@ -21,7 +22,8 @@ function App() {
           <Switch>
             <Route exact path="/">
               <Header></Header>
-              <Home></Home>
+              {/* <Home></Home> */}
+              <Search></Search>
               <Footer></Footer>
             </Route>
             <Route path="/login">
