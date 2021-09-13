@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { css } from '@emotion/react';
+import { css } from "@emotion/react";
 
 export const CardWrapper = styled.div`
   width: 288px;
@@ -7,12 +7,20 @@ export const CardWrapper = styled.div`
   position: relative;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
-  background-color: #FFF;
+  background-color: #fff;
 
-  ${props => props.trending && css`
-    width: 392px;
-    height: 460px;
-  `}
+  ${(props) =>
+    props.trending &&
+    css`
+      width: 392px;
+      height: 460px;
+    `}
+
+    ${(props) =>
+    props.description &&
+    css`
+      height: 487px;
+    `}
 `;
 
 export const CardViews = styled.p`
@@ -21,12 +29,12 @@ export const CardViews = styled.p`
   font-size: 14px;
   line-height: 19px;
   color: #181818;
-	font-family: "Nunito-Regular", sans-serif;
+  font-family: "Nunito-Regular", sans-serif;
   text-align: left;
 
   &:before {
     content: "";
-    background-image: url('../../assets/icons/views.svg');
+    background-image: url("../../assets/icons/views.svg");
     display: block;
     width: 16px;
     height: 11px;
@@ -58,14 +66,16 @@ export const CardImg = styled.img`
   width: 240px;
   height: 240px;
   border-radius: 50px 10px;
-  background-image: url(${props => props.card.img});
+  background-image: url(${(props) => props.card.img});
   background-repeat: no-repeat;
   background-size: contain;
 
-  ${props => props.trending && css`
-    width: 344px;
-    height: 344px;
-  `}
+  ${(props) =>
+    props.trending &&
+    css`
+      width: 344px;
+      height: 344px;
+    `}
 `;
 
 export const WrapperTitleAuthor = styled.div`
@@ -73,19 +83,38 @@ export const WrapperTitleAuthor = styled.div`
   justify-content: space-between;
   align-items: baseline;
   width: 240px;
-  margin: 16px auto 32px;
+  margin: 16px auto 0;
 
-  ${props => props.trending && css`
-    margin: 16px auto 0px;
-    width: 344px
-  `}
+  ${(props) =>
+    props.trending &&
+    css`
+      width: 344px;
+    `}
+`;
+
+export const CardDescription = styled.p`
+  display: none;
+  width: 240px;
+  height: 57px;
+  margin: 16px auto 0;
+  font-family: "Nunito-Regular", sans-serif;
+  font-size: 14px;
+  line-height: 19px;
+  color: #181818;
+
+  ${(props) =>
+    props.description &&
+    css`
+      display: block;
+      margin: 16px auto 0px;
+    `}
 `;
 
 export const CardTitle = styled.p`
   font-size: 20px;
   line-height: 24px;
   color: #181818;
-	font-family: "Montserrat-SemiBold", sans-serif;
+  font-family: "Montserrat-SemiBold", sans-serif;
   text-align: left;
 `;
 
@@ -102,11 +131,13 @@ export const WrapperLikesComments = styled.div`
   align-items: baseline;
   justify-content: flex-start;
   width: 240px;
-  margin: 0 auto;
+  margin: 32px auto 0;
 
-  ${props => props.trending && css`
-    display: none;
-  `}
+  ${(props) =>
+    props.trending &&
+    css`
+      display: none;
+    `}
 `;
 
 export const CardLikes = styled.p`
@@ -119,7 +150,7 @@ export const CardLikes = styled.p`
 
   &:before {
     content: "";
-    background-image: url('../../assets/icons/likes.svg');
+    background-image: url("../../assets/icons/likes.svg");
     display: block;
     width: 17px;
     height: 15px;
@@ -139,7 +170,7 @@ export const CardComments = styled.p`
 
   &:before {
     content: "";
-    background-image: url('../../assets/icons/comments.svg');
+    background-image: url("../../assets/icons/comments.svg");
     display: block;
     width: 15px;
     height: 15px;

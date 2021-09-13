@@ -2,7 +2,7 @@
   height: 1781px;
   width: 100%;
   max-width: 1680px;
-  background-color: #F7F7F7;
+  background-color: #f7f7f7;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,7 +25,8 @@
   width: 912px;
   height: 1573px;
   display: flex;
-  align-items: stretch;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 .search-nav {
@@ -35,7 +36,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-family: "Montserrat-SemiBold",sans-serif;
+  font-family: "Montserrat-SemiBold", sans-serif;
   font-size: 20px;
   line-height: 22px;
   color: #181818;

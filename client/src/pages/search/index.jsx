@@ -1,5 +1,6 @@
 import React from "react";
 import Filter from "./components/Filter";
+import BooksResult from "./components/BooksResult";
 import "./index.css"
 
 function Search() {
@@ -14,6 +15,7 @@ function Search() {
             <a href="#">Recepies</a>
             <a href="#">Cookbooks</a>
           </div>
+          <BooksResult></BooksResult>
         </div>
       </div>
     </div>
