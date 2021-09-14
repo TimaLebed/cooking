@@ -16,10 +16,21 @@ export const CardWrapper = styled.div`
       height: 460px;
     `}
 
-    ${(props) =>
+  ${(props) =>
     props.description &&
     css`
       height: 487px;
+    `}
+
+    ${(props) =>
+    props.recipesResult &&
+    css`
+      width: 912px;
+      height: 212px;
+      display: flex;
+      border-radius: 50px 10px 10px;
+      flex-direction: column;
+      align-items: flex-end;
     `}
 `;
 
@@ -43,6 +54,14 @@ export const CardViews = styled.p`
     top: 4px;
     transition: all 0.3s;
   }
+
+  ${(props) =>
+    props.recipesResult &&
+    css`
+      margin: 0;
+      top: 169px;
+      right: 494px;
+    `}
 `;
 
 export const ButtonEdit = styled.button`
@@ -59,6 +78,12 @@ export const ButtonEdit = styled.button`
   background-size: cover;
   background-repeat: no-repeat;
   cursor: pointer;
+
+  ${(props) =>
+    props.recipesResult &&
+    css`
+      top: 184px;
+    `}
 `;
 
 export const CardImg = styled.img`
@@ -76,6 +101,18 @@ export const CardImg = styled.img`
       width: 344px;
       height: 344px;
     `}
+
+  ${(props) =>
+    props.recipesResult &&
+    css`
+      width: 288px;
+      height: 212px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin-left: 0;
+      background-size: cover;
+    `}
 `;
 
 export const WrapperTitleAuthor = styled.div`
@@ -90,6 +127,13 @@ export const WrapperTitleAuthor = styled.div`
     css`
       width: 344px;
     `}
+
+  ${(props) =>
+    props.recipesResult &&
+    css`
+      margin: 6px 24px 0 0;
+      width: 576px;
+    `}
 `;
 
 export const CardDescription = styled.p`
@@ -101,12 +145,24 @@ export const CardDescription = styled.p`
   font-size: 14px;
   line-height: 19px;
   color: #181818;
+  ${'' /* white-space: nowrap; */}
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   ${(props) =>
     props.description &&
     css`
       display: block;
       margin: 16px auto 0px;
+    `}
+
+  ${(props) =>
+    props.recipesResult &&
+    css`
+      width: 576px;
+      height: 57px;
+      display: block;
+      margin: 16px 24px 0 0;
     `}
 `;
 
@@ -137,6 +193,12 @@ export const WrapperLikesComments = styled.div`
     props.trending &&
     css`
       display: none;
+    `}
+
+  ${(props) =>
+    props.recipesResult &&
+    css`
+      margin: 48px 245px 0 0px;
     `}
 `;
 

@@ -1,25 +1,36 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Filter from "./components/Filter";
 import BooksResult from "./components/BooksResult";
-import "./index.css"
+import RecipesResult from "./components/RecipesResult";
+import { Wrapper, Inner, Content, Nav } from "./Search.styled";
 
 function Search() {
   return (
-    <div className="wrapper">
-      <div className="inner">
-        <div className="sidebar">
-          <Filter></Filter>
-        </div>
-        <div className="content">
-          <div className="search-nav">
-            <a href="#">Recepies</a>
-            <a href="#">Cookbooks</a>
+    <Router>
+      <Wrapper>
+        <Inner>
+          <div>
+            <Filter></Filter>
           </div>
-          <BooksResult></BooksResult>
-        </div>
-      </div>
-    </div>
-  )
+          <Content>
+            <Nav>
+              <Link to="/recipes">Recepies</Link>
+              <Link to="/books">Cookbooks</Link>
+            </Nav>
+            <Switch>
+              <Route path="/books">
+                <BooksResult></BooksResult>
+              </Route>
+              <Route path="/recipes">
+                <RecipesResult></RecipesResult>
+              </Route>
+            </Switch>
+          </Content>
+        </Inner>
+      </Wrapper>
+    </Router>
+  );
 }
 
 export default Search;

@@ -21,8 +21,8 @@ function Card(props) {
 
   return (
     <CardWrapper {...props}>
-      <CardViews>{randomNumber(90000)} views</CardViews>
-      <ButtonEdit></ButtonEdit>
+      <CardViews {...props}>{randomNumber(90000)} views</CardViews>
+      <ButtonEdit {...props}></ButtonEdit>
       <CardImg {...props} alt=""></CardImg>
       <WrapperTitleAuthor {...props}>
         <CardTitle>{props.card.title}</CardTitle>
