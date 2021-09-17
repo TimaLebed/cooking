@@ -1,12 +1,21 @@
-import { css } from '@emotion/react';
+import { css } from "@emotion/react";
+import styled from "@emotion/styled";
 
-import MontserratSemiBold from "./assets/fonts/Montserrat/Montserrat-SemiBold.ttf"
-import MontserratBold from "./assets/fonts/Montserrat/Montserrat-Bold.ttf"
-import NunitoBold from "./assets/fonts/Nunito_Sans/NunitoSans-Bold.ttf"
-import NunitoRegular from "./assets/fonts/Nunito_Sans/NunitoSans-Regular.ttf"
+import MontserratSemiBold from "./assets/fonts/Montserrat/Montserrat-SemiBold.ttf";
+import MontserratBold from "./assets/fonts/Montserrat/Montserrat-Bold.ttf";
+import NunitoBold from "./assets/fonts/Nunito_Sans/NunitoSans-Bold.ttf";
+import NunitoSemiBold from "./assets/fonts/Nunito_Sans/NunitoSans-SemiBold.ttf";
+import NunitoRegular from "./assets/fonts/Nunito_Sans/NunitoSans-Regular.ttf";
+
+export const AppWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+`;
 
 export const globalStyles = css`
-   * {
+  * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -26,6 +35,12 @@ export const globalStyles = css`
   @font-face {
     font-family: "Nunito-Bold";
     src: url(${NunitoBold}) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Nunito-SemiBold";
+    src: url(${NunitoSemiBold}) format("truetype");
     font-weight: normal;
     font-style: normal;
   }

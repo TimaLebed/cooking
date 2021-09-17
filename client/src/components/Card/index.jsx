@@ -19,8 +19,16 @@ function Card(props) {
     Math.floor(Math.random() * n)
   );
 
+  const handelClickCard = (event) => {
+    const currentCardId = event.target.offsetParent.id;
+
+    props.setPopupActive(true);
+    props.setClickedCardId(currentCardId);
+  }
+
+
   return (
-    <CardWrapper {...props}>
+    <CardWrapper id={props.card.id} {...props} onClick={handelClickCard}>
       <CardViews {...props}>{randomNumber(90000)} views</CardViews>
       <ButtonEdit {...props}></ButtonEdit>
       <CardImg {...props} alt=""></CardImg>
