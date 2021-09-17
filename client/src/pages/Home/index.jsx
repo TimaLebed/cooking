@@ -4,7 +4,7 @@ import PopularRecipes from "./copmonents/PopularRecipes";
 import PopularBooks from "./copmonents/PopularBooks";
 import TrendingRecipes from "./copmonents/TrendingRecipes";
 
-import { Wrapper } from "./index.styled";
+import { Wrapper } from "./Home.styled";
 
 function Home() {
   return (

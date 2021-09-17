@@ -6,6 +6,7 @@ import {
   ButtonEdit,
   CardImg,
   WrapperTitleAuthor,
+  CardDescription,
   CardTitle,
   CardAuthor,
   WrapperLikesComments,
@@ -14,18 +15,31 @@ import {
 } from "./Card.styled";
 
 function Card(props) {
+  const randomNumber = (n) => (
+    Math.floor(Math.random() * n)
+  );
+
+  const handelClickCard = (event) => {
+    const currentCardId = event.target.offsetParent.id;
+
+    props.setPopupActive(true);
+    props.setClickedCardId(currentCardId);
+  }
+
+
   return (
-    <CardWrapper {...props}>
-      <CardViews>{props.card.views} views</CardViews>
-      <ButtonEdit></ButtonEdit>
+    <CardWrapper id={props.card.id} {...props} onClick={handelClickCard}>
+      <CardViews {...props}>{randomNumber(90000)} views</CardViews>
+      <ButtonEdit {...props}></ButtonEdit>
       <CardImg {...props} alt=""></CardImg>
       <WrapperTitleAuthor {...props}>
         <CardTitle>{props.card.title}</CardTitle>
         <CardAuthor>{props.card.author}</CardAuthor>
       </WrapperTitleAuthor>
+      <CardDescription {...props}>{props.card.description}</CardDescription>
       <WrapperLikesComments {...props}>
-        <CardLikes>{props.card.likes} likes</CardLikes>
-        <CardComments>{props.card.comments} comments</CardComments>
+        <CardLikes>{randomNumber(1000)} likes</CardLikes>
+        <CardComments>{randomNumber(300)} comments</CardComments>
       </WrapperLikesComments>
     </CardWrapper>
   )

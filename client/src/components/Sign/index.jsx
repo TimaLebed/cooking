@@ -19,7 +19,7 @@ function Sign(props) {
       <LoginTitle>Welcome back</LoginTitle>
       <LoginSubtitle>
         New here?
-        <Link to="/" className="login__create-link">Create an account</Link>
+        <Link to="/signup">Create an account</Link>
       </LoginSubtitle>
       <InputField>
         <Input id="email" type="text" name="email"></Input>
