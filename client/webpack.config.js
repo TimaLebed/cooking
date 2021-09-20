@@ -25,7 +25,7 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         { from: 'src/assets', to: 'assets' },
-        { from: 'src/pages/Home/copmonents/PopularRecipes/dataCards.json', to: '' },
+        { from: 'src/assets/dataCards.json', to: '' },
       ],
     }),
   ],
@@ -43,14 +43,6 @@ module.exports = {
         test: /\.(ttf|woff|woff2|eot)$/,
         use: ['file-loader'],
       },
-      // {
-      //   test: /images\/.*\.(png|jpg|svg|gif)$/,
-      //   loader: 'url-loader?limit=10000&name="[name]-[hash].[ext]"',
-      // },
-      // {
-      //   test: /fonts\/.*\.(woff|woff2|eot|ttf|svg)$/,
-      //   loader: 'file-loader?name="[name]-[hash].[ext]"',
-      // },
       {
         test: /\.m?js$/,
         exclude: /node_modules/,

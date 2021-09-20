@@ -1,20 +1,23 @@
 import React from "react";
 import { Global } from "@emotion/react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Header from "./components/Header";
+import { Provider } from "react-redux";
+
 import Home from "./pages/Home";
-import Footer from "./components/Footer";
-import Login from "./pages/LogIn";
-import SignUp from "./pages/SignUp";
 import Search from "./pages/Search";
-import BooksResult from "./pages/Search/components/BooksResult";
-import RecipesResult from "./pages/Search/components/RecipesResult";
+import { Header } from "./shared/Header";
+import { Footer } from "./shared/Footer";
+import { Login } from "./pages/LogIn";
+import { SignUp } from "./pages/SignUp";
+import { BooksResult } from "./pages/Search/children/BooksResult";
+import { RecipesResult } from "./pages/Search/children/RecipesResult";
+import { store } from "./store";
 
 import { globalStyles, AppWrapper } from "./App.styled";
 
-function App() {
+export const App = () => {
   return (
-    <>
+    <Provider store={store}>
       <Router>
         <AppWrapper>
           <Switch>
@@ -43,8 +46,6 @@ function App() {
         </AppWrapper>
       </Router>
       <Global styles={globalStyles} />
-    </>
+    </Provider>
   );
-}
-
-export default App;
+};

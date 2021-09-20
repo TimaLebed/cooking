@@ -1,20 +1,34 @@
 import React from "react";
-import HomeIntro from "./copmonents/HomeIntro";
-import PopularRecipes from "./copmonents/PopularRecipes";
-import PopularBooks from "./copmonents/PopularBooks";
-import TrendingRecipes from "./copmonents/TrendingRecipes";
+import { connect } from "react-redux";
 
-import { Wrapper } from "./Home.styled";
+import { HomeIntro } from "./children/HomeIntro";
+import { PopularRecipes } from "./children/PopularRecipes";
+import { PopularBooks } from "./children/PopularBooks";
+import { TrendingRecipes } from "./children/TrendingRecipes";
+import { fetchCards } from "../../api";
+import { useReduxApi } from "../../hooks/useReduxApi";
 
-function Home() {
+import { Wrapper } from "./index.styled";
+
+const Home = ({ fetchCards }) => {
+  // const { data } = useFetch("./dataCards.json");
+  // const cards = data || [];
+
+  const { data } = useReduxApi(fetchCards, "cardsReducer");
+  const cards = data.cards || [];
+
   return (
     <Wrapper>
       <HomeIntro></HomeIntro>
-      <PopularRecipes></PopularRecipes>
+      <PopularRecipes cards={cards}></PopularRecipes>
       <PopularBooks></PopularBooks>
-      <TrendingRecipes></TrendingRecipes>
+      <TrendingRecipes cards={cards}></TrendingRecipes>
     </Wrapper>
-  )
-}
+  );
+};
 
-export default Home;
+const mapDispatchToProps = {
+  fetchCards,
+};
+
+export default connect(null, mapDispatchToProps)(Home);
