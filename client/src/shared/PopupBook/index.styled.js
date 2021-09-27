@@ -14,6 +14,7 @@ export const PopupWrapper = styled.div`
   opacity: 0;
   pointer-events: none;
   transition: 0.4s;
+  z-index: 2;
 
   ${(props) =>
     props.active &&
@@ -24,10 +25,10 @@ export const PopupWrapper = styled.div`
 `;
 
 export const PopupContent = styled.div`
-  padding: 72px 56px;
+  padding: 72px 56px 0;
   margin-top: 300px;
   width: 1016px;
-  height: 1543px;
+  height: 1555px;
   background-color: #fff;
   box-shadow: 0px 18px 60px rgba(24, 24, 24, 0.7);
   border-radius: 10px;

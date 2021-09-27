@@ -13,19 +13,23 @@ module.exports = {
   devServer: {
     port: 3000,
     compress: true,
+    historyApiFallback: true,
+    hot: true,
   },
   resolve: {
-    extensions: ['.js', '.json', '.jsx'],
+    extensions: [".js", ".json", ".jsx"],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join("src", "index.html")
+      template: path.join("src", "index.html"),
     }),
     new CleanWebpackPlugin(),
     new CopyPlugin({
       patterns: [
-        { from: 'src/assets', to: 'assets' },
-        { from: 'src/assets/dataCards.json', to: '' },
+        { from: "src/assets", to: "assets" },
+        { from: "src/assets/dataCards.json", to: "" },
+        { from: "src/assets/dataBooks.json", to: "" },
+        { from: "src/assets/dataRecipes.json", to: "" },
       ],
     }),
   ],
@@ -33,15 +37,15 @@ module.exports = {
     rules: [
       {
         test: /\.(css|scss)$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
       {
         test: /\.(png|jpg|svg|gif)$/,
-        use: ['file-loader'],
+        use: ["file-loader"],
       },
       {
         test: /\.(ttf|woff|woff2|eot)$/,
-        use: ['file-loader'],
+        use: ["file-loader"],
       },
       {
         test: /\.m?js$/,
@@ -49,9 +53,9 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: ['@babel/preset-env']
-          }
-        }
+            presets: ["@babel/preset-env"],
+          },
+        },
       },
       {
         test: /\.m?jsx$/,
@@ -59,22 +63,10 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["@babel/preset-react", '@babel/preset-env']
-          }
-        }
+            presets: ["@babel/preset-react", "@babel/preset-env"],
+          },
+        },
       },
-      // {
-      //   test: /\.(png|jpe?g|gif)$/,
-      //   use: [
-      //     {
-      //       loader: 'url-loader',
-      //       options: {
-      //         limit: 10000,
-      //         name: 'assets/[name].[ext]',
-      //       },
-      //     },
-      //   ],
-      // },
     ],
-  }
-}
+  },
+};

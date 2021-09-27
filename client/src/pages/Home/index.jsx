@@ -1,34 +1,48 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 
 import { HomeIntro } from "./children/HomeIntro";
 import { PopularRecipes } from "./children/PopularRecipes";
 import { PopularBooks } from "./children/PopularBooks";
 import { TrendingRecipes } from "./children/TrendingRecipes";
-import { fetchCards } from "../../api";
-import { useReduxApi } from "../../hooks/useReduxApi";
+import { fetchRecipes } from "../../redux";
 
 import { Wrapper } from "./index.styled";
 
-const Home = ({ fetchCards }) => {
-  // const { data } = useFetch("./dataCards.json");
-  // const cards = data || [];
-
-  const { data } = useReduxApi(fetchCards, "cardsReducer");
-  const cards = data.cards || [];
+const Home = ({ fetchRecipes, recipesData }) => {
+  useEffect(() => {
+    return () => fetchRecipes();
+  }, []);
 
   return (
     <Wrapper>
       <HomeIntro></HomeIntro>
-      <PopularRecipes cards={cards}></PopularRecipes>
+      {recipesData.loading ? (
+        "loading..."
+      ) : (
+        <PopularRecipes recipes={recipesData.recipes}></PopularRecipes>
+      )}
+
       <PopularBooks></PopularBooks>
-      <TrendingRecipes cards={cards}></TrendingRecipes>
+      {recipesData.loading ? (
+        "loading..."
+      ) : (
+        <TrendingRecipes recipes={recipesData.recipes}></TrendingRecipes>
+      )}
     </Wrapper>
   );
 };
 
-const mapDispatchToProps = {
-  fetchCards,
+const mapStateToProps = (state) => {
+  return {
+    recipesData: state.recipes,
+  };
 };
 
-export default connect(null, mapDispatchToProps)(Home);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchRecipes: () => dispatch(fetchRecipes()),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

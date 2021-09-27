@@ -11,7 +11,8 @@ import { Login } from "./pages/LogIn";
 import { SignUp } from "./pages/SignUp";
 import { BooksResult } from "./pages/Search/children/BooksResult";
 import { RecipesResult } from "./pages/Search/children/RecipesResult";
-import { store } from "./store";
+// import { store } from "./store";
+import store from "./redux/store"
 
 import { globalStyles, AppWrapper } from "./App.styled";
 
@@ -24,6 +25,7 @@ export const App = () => {
             <Route exact path="/">
               <Header></Header>
               <Home></Home>
+              {/* <Search></Search> */}
               <Footer></Footer>
             </Route>
             <Route path="/books">

@@ -1,35 +1,38 @@
 import React, { useState } from "react";
+
 import { Card } from "../../../../shared/Card";
-import { Popup } from "./Popup";
+import { PopupBook } from "../../../../shared/PopupBook";
 import { BooksWrapper } from "./index.styled";
 
-export const BooksResult = ({ cards }) => {
+export const BooksResult = ({ books }) => {
   const [popupActive, setPopupActive] = useState(false);
   const [clickedCardId, setClickedCardId] = useState(null);
+  // console.log(books)
 
-  const books = cards.map((item, index) => {
+  const cards = books.map((item, index) => {
     if (index === 3) return null;
 
     return (
-      <Card
-        description
-        key={item.id}
-        card={item}
-        setPopupActive={setPopupActive}
-        setClickedCardId={setClickedCardId}
-      ></Card>
+        <Card
+          description
+          key={`card-${item.id}`}
+          card={item}
+          setPopupActive={setPopupActive}
+          setClickedCardId={setClickedCardId}
+        ></Card>
     );
   });
 
-  const popup = cards.map((item, index) => {
+  const popup = books.map((item, index) => {
     if (index === Number(clickedCardId)) {
       return (
-        <Popup
-          key={item.id}
+        <PopupBook
+          key={`popupbook-${item.id}`}
           active={popupActive}
           setActive={setPopupActive}
           clickedCard={item}
-        ></Popup>
+          books={books}
+        ></PopupBook>
       );
     }
   });
@@ -37,9 +40,7 @@ export const BooksResult = ({ cards }) => {
   return (
     <>
       <BooksWrapper>
-        {books}
-        {books}
-        {books}
+        {cards}
       </BooksWrapper>
       {popup}
     </>

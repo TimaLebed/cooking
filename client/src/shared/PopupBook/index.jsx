@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 
-import {Card} from "../../../../../shared/Card";
-import {Button} from "../../../../../shared/Button";
-import {Comments} from "../../../../../shared/Comments";
+import { Card } from "../Card";
+import { Button } from "../Button";
+import { Comments } from "../Comments";
 import {
   PopupWrapper,
   PopupContent,
@@ -21,25 +21,10 @@ import {
   WrapperCards,
 } from "./index.styled";
 
-const urlCards = "./dataCards.json";
-
-export const Popup = ({ active, setActive, clickedCard }) => {
-  const [data, setData] = useState({ cards: [] });
-
-  useEffect(() => {
-    const fetchCards = async () => {
-      let response = await fetch(urlCards);
-      response = await response.json();
-
-      setData({ cards: response });
-    };
-
-    fetchCards();
-  }, []);
-
-  const cards = data.cards.map((item, index) => {
+export const PopupBook = ({ active, setActive, clickedCard, books }) => {
+  const cards = books.map((item, index) => {
     if (index < 2) {
-      return <Card recipesResult key={item.id} card={item}></Card>;
+      return <Card recipesResult key={`popup-${item.id}`} card={item}></Card>;
     }
   });
 
@@ -58,7 +43,7 @@ export const Popup = ({ active, setActive, clickedCard }) => {
           <Title>{clickedCard.title}</Title>
           <Author>{clickedCard.author}</Author>
         </WrapperTitleAuthor>
-        <Button details>Clone to My CoookBok</Button>
+        <Button details>Clone to My CookBook</Button>
         <WrapperImgDescription>
           <Img img={clickedCard.img} alt=""></Img>
           <Description>
@@ -76,4 +61,4 @@ export const Popup = ({ active, setActive, clickedCard }) => {
       </PopupContent>
     </PopupWrapper>
   );
-}
+};

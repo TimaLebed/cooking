@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 
 export const CommentsWrapper = styled.div`
-  margin-top: 100px;
+  margin: 100px auto 0;
   width: 904px;
   height: 304px;
   display: flex;
