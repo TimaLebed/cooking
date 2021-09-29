@@ -1,7 +1,7 @@
 [
   {
     "views": "12000",
-    "img": "../../../../assets/images/fish.png",
+    "img": "../../../../../static/images/fish.png",
     "title": "Fish",
     "author": "John Doe",
     "likes": "499",
@@ -10,7 +10,7 @@
   },
   {
     "views": "12000",
-    "img": "../../../../assets/images/pancakes.png",
+    "img": "../../../../../static/images/pancakes.png",
     "title": "Fish",
     "author": "John Doe",
     "likes": "499",
@@ -19,7 +19,7 @@
   },
   {
     "views": "12000",
-    "img": "../../../../assets/images/pancakes-fruit.png",
+    "img": "../../../../../static/images/pancakes-fruit.png",
     "title": "Fish",
     "author": "John Doe",
     "likes": "499",

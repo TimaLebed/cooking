@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server": "npm run start --prefix server",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
@@ -16,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/TimaLebed/cooking/issues"
   },
-  "homepage": "https://github.com/TimaLebed/cooking#readme"
+  "homepage": "https://github.com/TimaLebed/cooking#readme",
+  "devDependencies": {
+    "concurrently": "^6.2.2"
+  }
 }

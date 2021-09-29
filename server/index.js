@@ -1,9 +1,17 @@
-import express from 'express'
+import express from "express";
+import cors from "cors";
 
-const app = express()
+import bookRoutes from "./routes/book.js";
+import recipeRoutes from "./routes/recipe.js";
 
-app.get('/', function (req, res) {
-  res.send('Hello World')
-})
+const app = express();
+const PORT = 5000;
 
-app.listen(5000)
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.use("/books", bookRoutes);
+app.use("/recipes", recipeRoutes);
+
+app.listen(PORT, () => console.log(`Server is running on port: ${PORT}`));

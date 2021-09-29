@@ -1,4 +1,4 @@
-import axios from "axios";
+import recipeApi from "../../api/RecipeApi";
 import {
   FETCH_RECIPES_REQUEST,
   FETCH_RECIPES_SUCCESS,
@@ -8,15 +8,10 @@ import {
 export const fetchRecipes = () => {
   return (dispatch) => {
     dispatch(fetchRecipesRequest());
-    axios
-      .get("./dataRecipes.json")
-      .then((response) => {
-        const recipes = response.data;
-        dispatch(fetchRecipesSuccess(recipes));
-      })
-      .catch((error) => {
-        dispatch(fetchRecipesFailure(error.message));
-      });
+    recipeApi
+      .getRecipes()
+      .then((data) => dispatch(fetchRecipesSuccess(data)))
+      .catch(({ message }) => dispatch(fetchRecipesFailure(message)));
   };
 };
 

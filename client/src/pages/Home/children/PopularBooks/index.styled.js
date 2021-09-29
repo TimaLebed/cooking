@@ -57,22 +57,22 @@ export const Card = styled.div`
   ${props => props.large && css`
     width: 600px;
     height: 540px;
-    /* background: url(../../../../assets/images/books/all-pancakes.png), linear-gradient(to top, rgba(255,0,0,0.3), rgba(255,0,0,0.3)); */
-    background-image: url(../../../../assets/images/books/all-pancakes.png);
+    /* background: url(../../../../../static/images/books/all-pancakes.png), linear-gradient(to top, rgba(255,0,0,0.3), rgba(255,0,0,0.3)); */
+    background-image: url(../../../../../static/images/books/all-pancakes.png);
   `}
 
   ${props => props.medium && css`
     width: 600px;
     height: 258px;
-    background-image: url(../../../../assets/images/books/icecream.png);
+    background-image: url(../../../../../static/images/books/icecream.png);
   `}
 
   ${props => props.left && css`
-    background-image: url(../../../../assets/images/books/fast-breakfast.png);
+    background-image: url(../../../../../static/images/books/fast-breakfast.png);
   `}
 
   ${props => props.right && css`
-    background-image: url(../../../../assets/images/books/fruit-veg.png);
+    background-image: url(../../../../../static/images/books/fruit-veg.png);
   `}
 `;
 
@@ -111,7 +111,7 @@ export const ButtonEdit = styled.button`
   top: 24px;
   border: none;
   outline: none;
-  background-image: url(../../../../assets/icons/edit.svg);
+  background-image: url(../../../../../static/icons/edit.svg);
   background-color: initial;
   background-position: center;
   background-size: cover;

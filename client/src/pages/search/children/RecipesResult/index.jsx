@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Card } from "../../../../shared/Card";
+import { CardRecipe } from "../../../../shared/CardRecipe";
 import { PopupRecipes } from "../../../../shared/PopupRecipes";
 import { RecipesWrapper } from "./index.styled";
 
@@ -12,13 +12,13 @@ export const RecipesResult = ({ recipes }) => {
     if (index === 3) return null;
 
     return (
-      <Card
+      <CardRecipe
         recipesResult
         key={item.id}
         card={item}
         setPopupActive={setPopupActive}
         setClickedCardId={setClickedCardId}
-      ></Card>
+      ></CardRecipe>
     );
   });
 

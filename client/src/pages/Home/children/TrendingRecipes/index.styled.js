@@ -9,7 +9,7 @@ export const TrendingWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(../../../../assets/images/trending-back.png);
+  background-image: url(../../../../../static/images/trending-back.png);
 `;
 
 export const TrendingContent = styled.div`

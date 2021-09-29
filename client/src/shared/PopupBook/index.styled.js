@@ -120,7 +120,7 @@ export const Like = styled.p`
 
   &:before {
     content: "";
-    background-image: url("../../../../../assets/icons/likes.svg");
+    background-image: url("../../../../../../static/icons/likes.svg");
     display: block;
     width: 17px;
     height: 15px;
@@ -140,7 +140,7 @@ export const Comment = styled.p`
 
   &:before {
     content: "";
-    background-image: url("../../../../../assets/icons/comments.svg");
+    background-image: url("../../../../../../static/icons/comments.svg");
     display: block;
     width: 15px;
     height: 15px;

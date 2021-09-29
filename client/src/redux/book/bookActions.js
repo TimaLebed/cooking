@@ -1,4 +1,4 @@
-import axios from "axios";
+import bookApi from "../../api/BookApi";
 import {
   FETCH_BOOKS_REQUEST,
   FETCH_BOOKS_SUCCESS,
@@ -8,15 +8,10 @@ import {
 export const fetchBooks = () => {
   return (dispatch) => {
     dispatch(fetchBooksRequest());
-    axios
-      .get("./dataBooks.json")
-      .then((response) => {
-        const books = response.data;
-        dispatch(fetchBooksSuccess(books));
-      })
-      .catch((error) => {
-        dispatch(fetchBooksFailure(error.message));
-      });
+    bookApi
+      .getBooks()
+      .then((data) => dispatch(fetchBooksSuccess(data)))
+      .catch(({ message }) => dispatch(fetchBooksFailure(message)));
   };
 };
 

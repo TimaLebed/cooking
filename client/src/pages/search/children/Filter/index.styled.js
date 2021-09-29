@@ -50,7 +50,7 @@ export const Select = styled.select`
   border: 1px solid #dadada;
   border-radius: 4px;
   appearance: none;
-  background-image: url("../../../../assets/icons/filter-arrow.svg");
+  background-image: url("../../../../../static/icons/filter-arrow.svg");
   background-repeat: no-repeat;
   background-size: 14px;
   background-position: right 16px top 50%;
@@ -100,7 +100,7 @@ export const SpanFake = styled.span`
   text-align: center;
 
   &::before {
-    content: url("../../../../assets/icons/vector.svg");
+    content: url("../../../../../static/icons/vector.svg");
     position: absolute;
     top: 50%;
     left: 50%;

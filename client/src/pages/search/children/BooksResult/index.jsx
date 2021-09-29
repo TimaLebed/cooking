@@ -7,19 +7,18 @@ import { BooksWrapper } from "./index.styled";
 export const BooksResult = ({ books }) => {
   const [popupActive, setPopupActive] = useState(false);
   const [clickedCardId, setClickedCardId] = useState(null);
-  // console.log(books)
 
   const cards = books.map((item, index) => {
     if (index === 3) return null;
 
     return (
-        <Card
-          description
-          key={`card-${item.id}`}
-          card={item}
-          setPopupActive={setPopupActive}
-          setClickedCardId={setClickedCardId}
-        ></Card>
+      <Card
+        description
+        key={`card-${item.id}`}
+        card={item}
+        setPopupActive={setPopupActive}
+        setClickedCardId={setClickedCardId}
+      ></Card>
     );
   });
 
@@ -40,6 +39,8 @@ export const BooksResult = ({ books }) => {
   return (
     <>
       <BooksWrapper>
+        {cards}
+        {cards}
         {cards}
       </BooksWrapper>
       {popup}

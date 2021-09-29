@@ -6,7 +6,7 @@ export const HomeWrapper = styled.div`
   width: 100%;
   max-width: 1616px;
   margin: 0 auto;
-  background-image: url(../../../../assets/images/home.png);
+  background-image: url(../../../../../static/images/home.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

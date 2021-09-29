@@ -3,17 +3,13 @@ import { Global } from "@emotion/react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 
+import store from "./redux/store";
 import Home from "./pages/Home";
 import Search from "./pages/Search";
 import { Header } from "./shared/Header";
 import { Footer } from "./shared/Footer";
 import { Login } from "./pages/LogIn";
 import { SignUp } from "./pages/SignUp";
-import { BooksResult } from "./pages/Search/children/BooksResult";
-import { RecipesResult } from "./pages/Search/children/RecipesResult";
-// import { store } from "./store";
-import store from "./redux/store"
-
 import { globalStyles, AppWrapper } from "./App.styled";
 
 export const App = () => {
@@ -25,7 +21,6 @@ export const App = () => {
             <Route exact path="/">
               <Header></Header>
               <Home></Home>
-              {/* <Search></Search> */}
               <Footer></Footer>
             </Route>
             <Route path="/books">

@@ -12,7 +12,7 @@ export const LogoWrapper = styled.div`
 export const LogoImg = styled.div`
   width: 17px;
   height: 24px;
-  background-image: url("../../assets/icons/logo.svg");
+  background-image: url("../../../static/icons/logo.svg");
   background-repeat: no-repeat;
 `;
 

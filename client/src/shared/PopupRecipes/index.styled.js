@@ -173,7 +173,7 @@ export const IngredientStep = styled.p`
 
   &:before {
     content: "";
-    background-image: url(../../../../../assets/icons/circle-yellow.svg);
+    background-image: url(../../../../../../static/icons/circle-yellow.svg);
     display: block;
     width: 5px;
     height: 5px;
@@ -202,7 +202,7 @@ export const View = styled.p`
 
   &:before {
     content: "";
-    background-image: url("../../../../../assets/icons/views.svg");
+    background-image: url("../../../../../../static/icons/views.svg");
     display: block;
     width: 16px;
     height: 11px;
@@ -222,7 +222,7 @@ export const Like = styled.p`
 
   &:before {
     content: "";
-    background-image: url("../../../../../assets/icons/likes.svg");
+    background-image: url("../../../../../../static/icons/likes.svg");
     display: block;
     width: 17px;
     height: 15px;
@@ -243,7 +243,7 @@ export const Comment = styled.p`
 
   &:before {
     content: "";
-    background-image: url("../../../../../assets/icons/comments.svg");
+    background-image: url("../../../../../../static/icons/comments.svg");
     display: block;
     width: 15px;
     height: 15px;

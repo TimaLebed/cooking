@@ -45,7 +45,7 @@ export const CardViews = styled.p`
 
   &:before {
     content: "";
-    background-image: url("../../assets/icons/views.svg");
+    background-image: url("../../../static/icons/views.svg");
     display: block;
     width: 16px;
     height: 11px;
@@ -72,7 +72,7 @@ export const ButtonEdit = styled.button`
   top: 28px;
   border: none;
   outline: none;
-  background-image: url(../../../../assets/icons/edit.svg);
+  background-image: url(../../../../../static/icons/edit.svg);
   background-color: initial;
   background-position: center;
   background-size: cover;
@@ -212,7 +212,7 @@ export const CardLikes = styled.p`
 
   &:before {
     content: "";
-    background-image: url("../../assets/icons/likes.svg");
+    background-image: url("../../../static/icons/likes.svg");
     display: block;
     width: 17px;
     height: 15px;
@@ -232,7 +232,7 @@ export const CardComments = styled.p`
 
   &:before {
     content: "";
-    background-image: url("../../assets/icons/comments.svg");
+    background-image: url("../../../static/icons/comments.svg");
     display: block;
     width: 15px;
     height: 15px;

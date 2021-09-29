@@ -21,15 +21,15 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join("src", "index.html"),
+      template: path.join("static", "index.html"),
     }),
     new CleanWebpackPlugin(),
     new CopyPlugin({
       patterns: [
-        { from: "src/assets", to: "assets" },
-        { from: "src/assets/dataCards.json", to: "" },
-        { from: "src/assets/dataBooks.json", to: "" },
-        { from: "src/assets/dataRecipes.json", to: "" },
+        { from: "static", to: "static" },
+        { from: "static/dataCards.json", to: "" },
+        { from: "static/dataBooks.json", to: "" },
+        { from: "static/dataRecipes.json", to: "" },
       ],
     }),
   ],

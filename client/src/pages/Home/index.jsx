@@ -10,8 +10,11 @@ import { fetchRecipes } from "../../redux";
 import { Wrapper } from "./index.styled";
 
 const Home = ({ fetchRecipes, recipesData }) => {
+  // useEffect(() => {
+  //   return () => fetchRecipes();
+  // }, []);
   useEffect(() => {
-    return () => fetchRecipes();
+    fetchRecipes();
   }, []);
 
   return (
@@ -22,7 +25,6 @@ const Home = ({ fetchRecipes, recipesData }) => {
       ) : (
         <PopularRecipes recipes={recipesData.recipes}></PopularRecipes>
       )}
-
       <PopularBooks></PopularBooks>
       {recipesData.loading ? (
         "loading..."

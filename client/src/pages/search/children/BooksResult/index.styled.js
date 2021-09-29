@@ -8,4 +8,5 @@ export const BooksWrapper = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  overflow: hidden;
 `;

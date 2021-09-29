@@ -1,11 +1,11 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
-import MontserratSemiBold from "./assets/fonts/Montserrat/Montserrat-SemiBold.ttf";
-import MontserratBold from "./assets/fonts/Montserrat/Montserrat-Bold.ttf";
-import NunitoBold from "./assets/fonts/Nunito_Sans/NunitoSans-Bold.ttf";
-import NunitoSemiBold from "./assets/fonts/Nunito_Sans/NunitoSans-SemiBold.ttf";
-import NunitoRegular from "./assets/fonts/Nunito_Sans/NunitoSans-Regular.ttf";
+import MontserratSemiBold from "../static/fonts/Montserrat/Montserrat-SemiBold.ttf";
+import MontserratBold from "../static/fonts/Montserrat/Montserrat-Bold.ttf";
+import NunitoBold from "../static/fonts/Nunito_Sans/NunitoSans-Bold.ttf";
+import NunitoSemiBold from "../static/fonts/Nunito_Sans/NunitoSans-SemiBold.ttf";
+import NunitoRegular from "../static/fonts/Nunito_Sans/NunitoSans-Regular.ttf";
 
 export const AppWrapper = styled.div`
   display: flex;

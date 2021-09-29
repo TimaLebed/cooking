@@ -46,7 +46,7 @@ export const Button = styled.button`
   border-radius: 10px;
   cursor: pointer;
   border: 0;
-  background-image: url("../../../../assets/icons/details-send.svg");
+  background-image: url("../../../../../static/icons/details-send.svg");
   background-repeat: no-repeat;
   background-position: center;
 `;
