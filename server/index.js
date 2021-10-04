@@ -1,14 +1,15 @@
-import express, { json } from "express";
+import express from "express";
 import cors from "cors";
-import mongoose from "mongoose";
+import config from "config";
 
-// import User from "./User.js";
+import db from "./db.js";
+import * as models from "./models/index.js";
 import bookRoutes from "./routes/book.js";
 import recipeRoutes from "./routes/recipe.js";
 import authRoutes from "./routes/auth.js";
 
 const app = express();
-const PORT = 5000;
+const PORT = config.get("PORT") || 5000;
 
 app.use(cors());
 app.use(express.json());
@@ -16,11 +17,6 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/books", bookRoutes);
 app.use("/recipes", recipeRoutes);
-
-// app.listen(PORT, () => console.log(`Server is running on port: ${PORT}`));
-
-const DB_URL = `mongodb+srv://user:user@cluster0.1ozfs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
-
 app.use("/login", authRoutes);
 
 // app.post("/login", async (req, res) => {
@@ -35,13 +31,11 @@ app.use("/login", authRoutes);
 
 async function startApp() {
   try {
-    await mongoose.connect(DB_URL, {
-      useUnifiedTopology: true,
-      useNewUrlParser: true,
-    });
+    await db.authenticate();
+    await db.sync();
     app.listen(PORT, () => console.log(`Server is running on port: ${PORT}`));
   } catch (err) {
-    console.error(err);
+    console.error("Unable to connect to the database:", err);
   }
 }
 

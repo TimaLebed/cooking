@@ -1,0 +1,10 @@
+{
+  "PORT": 5000,
+  "DATA_BASE": {
+    "NAME": "cooking",
+    "USER": "postgres",
+    "PASSWORD": "test",
+    "HOST": "localhost",
+    "PORT": 5432
+  }
+}
