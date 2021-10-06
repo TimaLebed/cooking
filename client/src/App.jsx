@@ -11,13 +11,15 @@ import { Footer } from "./shared/Footer";
 import { Login } from "./pages/LogIn";
 import { SignUp } from "./pages/SignUp";
 import { globalStyles, AppWrapper } from "./App.styled";
+import AppRouter from "./AppRoutes";
 
 export const App = () => {
   return (
     <Provider store={store}>
       <Router>
         <AppWrapper>
-          <Switch>
+          <AppRouter></AppRouter>
+          {/* <Switch>
             <Route exact path="/">
               <Header></Header>
               <Home></Home>
@@ -39,7 +41,7 @@ export const App = () => {
             <Route path="/signup">
               <SignUp></SignUp>
             </Route>
-          </Switch>
+          </Switch> */}
         </AppWrapper>
       </Router>
       <Global styles={globalStyles} />
