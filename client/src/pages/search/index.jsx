@@ -6,10 +6,16 @@ import { Filter } from "./children/Filter";
 import { BooksResult } from "./children/BooksResult";
 import { RecipesResult } from "./children/RecipesResult";
 import { fetchBooks, fetchRecipes } from "../../redux";
-
 import { Wrapper, Inner, Content, Nav } from "./index.styled";
+import { BOOKS_ROUTE, RECIPES_ROUTE } from "../../utils/constants";
 
-const Search = ({ fetchBooks, fetchRecipes, booksData, recipesData }) => {
+const Search = ({
+  fetchBooks,
+  fetchRecipes,
+  booksData,
+  recipesData,
+  routePath,
+}) => {
   useEffect(() => {
     fetchBooks();
     fetchRecipes();
@@ -30,18 +36,18 @@ const Search = ({ fetchBooks, fetchRecipes, booksData, recipesData }) => {
           </div>
           <Content>
             <Nav>
-              <Link to="/recipes">Recepies</Link>
-              <Link to="/books">Cookbooks</Link>
+              <Link to={RECIPES_ROUTE}>Recepies</Link>
+              <Link to={BOOKS_ROUTE}>Cookbooks</Link>
             </Nav>
             <Switch>
-              <Route path="/books">
+              <Route path={BOOKS_ROUTE}>
                 {booksData.loading ? (
                   "loading..."
                 ) : (
                   <BooksResult books={booksData.books}></BooksResult>
                 )}
               </Route>
-              <Route path="/recipes">
+              <Route path={RECIPES_ROUTE}>
                 {recipesData.loading ? (
                   "loading..."
                 ) : (

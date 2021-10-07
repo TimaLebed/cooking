@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { Logo } from "../Logo";
 import { Button } from "../Button";
+import { BOOKS_ROUTE, RECIPES_ROUTE } from "../../utils/constants";
 import {
   HeaderWrapper,
   HeaderInner,
@@ -18,8 +19,8 @@ const Header = ({ userData }) => {
       <HeaderInner>
         <Logo></Logo>
         <HeaderNav>
-          <Link to="/recipes">Recepies</Link>
-          <Link to="/books">Cookbooks</Link>
+          <Link to={RECIPES_ROUTE}>Recepies</Link>
+          <Link to={BOOKS_ROUTE}>Cookbooks</Link>
         </HeaderNav>
         <HeaderForm>
           <HeaderInput

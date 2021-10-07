@@ -13,7 +13,8 @@ import {
   HOME_ROUTE,
   SIGNUP_ROUTE,
   LOGIN_ROUTE,
-  SEARCH_ROUTE,
+  BOOKS_ROUTE,
+  RECIPES_ROUTE,
 } from "./utils/constants";
 
 export const authRoutes = [
@@ -41,10 +42,18 @@ export const publicRoutes = [
     Component: Login,
   },
   {
-    path: SEARCH_ROUTE,
+    path: BOOKS_ROUTE,
     Component: () => (
       <WithHeaderAndFooter>
-        <Search></Search>
+        <Search routePath={BOOKS_ROUTE}></Search>
+      </WithHeaderAndFooter>
+    ),
+  },
+  {
+    path: RECIPES_ROUTE,
+    Component: () => (
+      <WithHeaderAndFooter>
+        <Search routePath={RECIPES_ROUTE}></Search>
       </WithHeaderAndFooter>
     ),
   },
