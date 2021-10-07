@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { Logo } from "../Logo";
 import { Button } from "../Button";
@@ -11,7 +12,7 @@ import {
   HeaderIcon,
 } from "./index.styled";
 
-export const Header = () => {
+const Header = ({ userData }) => {
   return (
     <HeaderWrapper>
       <HeaderInner>
@@ -34,8 +35,16 @@ export const Header = () => {
           </HeaderIcon>
         </HeaderForm>
         <Button>Create cookBook</Button>
-        <Link to="/login">Sign in</Link>
+        {userData.isAuth ? userData.user.email : <Link to="/login">Sign in</Link>}
       </HeaderInner>
     </HeaderWrapper>
   );
 };
+
+const mapStateToProps = (state) => {
+  return {
+    userData: state.user,
+  };
+};
+
+export default connect(mapStateToProps)(Header);

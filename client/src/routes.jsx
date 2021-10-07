@@ -1,8 +1,12 @@
+import React from "react";
+
 import Admin from "./pages/Admin";
 import Home from "./pages/Home";
 import Search from "./pages/Search";
-import { SignUp } from "./pages/SignUp";
-import { Login } from "./pages/LogIn";
+import SignUp from "./pages/SignUp";
+import Login from "./pages/LogIn";
+
+import { WithHeaderAndFooter } from "./hoc/WithHeaderAndFooter";
 
 import {
   ADMIN_ROUTE,
@@ -11,8 +15,6 @@ import {
   LOGIN_ROUTE,
   SEARCH_ROUTE,
 } from "./utils/constants";
-
-console.log(ADMIN_ROUTE, HOME_ROUTE, SIGNUP_ROUTE, LOGIN_ROUTE, SEARCH_ROUTE);
 
 export const authRoutes = [
   {
@@ -24,7 +26,11 @@ export const authRoutes = [
 export const publicRoutes = [
   {
     path: HOME_ROUTE,
-    Component: Home,
+    Component: () => (
+      <WithHeaderAndFooter>
+        <Home></Home>
+      </WithHeaderAndFooter>
+    ),
   },
   {
     path: SIGNUP_ROUTE,
@@ -36,6 +42,10 @@ export const publicRoutes = [
   },
   {
     path: SEARCH_ROUTE,
-    Component: Search,
+    Component: () => (
+      <WithHeaderAndFooter>
+        <Search></Search>
+      </WithHeaderAndFooter>
+    ),
   },
 ];

@@ -1,8 +1,11 @@
-import axios from "axios";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { Link, useHistory } from "react-router-dom";
 
+import { setUser, setAuth } from "../../redux";
+import { login, checkAuth } from "../../api/userApi";
 import { Logo } from "../../shared/Logo";
+import { HOME_ROUTE } from "../../utils/constants";
 import {
   LoginWrapper,
   LoginBackground,
@@ -15,7 +18,8 @@ import {
   Button,
 } from "./index.styled";
 
-export const Login = () => {
+const Login = ({ userData, setUser, setAuth }) => {
+  const history = useHistory();
   const [form, setForm] = useState({
     email: "",
     password: "",
@@ -26,21 +30,18 @@ export const Login = () => {
     console.log(form);
   };
 
-  const registerHandler = async () => {
+  const sign = async () => {
     try {
-      await axios
-        .post(
-          "http://localhost:5000/login",
-          { ...form },
-          {
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        )
-        .then((response) => console.log(response));
+      const user = await login(form.email, form.password);
+      const token = localStorage.getItem("token");
+      const isAuth = await checkAuth(token);
+
+      setUser(user);
+      setAuth(isAuth);
+
+      history.push(HOME_ROUTE);
     } catch (error) {
-      console.log("registerHandler",error);
+      alert(error.response.data.message);
     }
   };
 
@@ -72,8 +73,23 @@ export const Login = () => {
           ></Input>
           <Label htmlFor="password">Password</Label>
         </InputField>
-        <Button type="button" onClick={registerHandler}>Sign In</Button>
+        <Button type="button" onClick={sign}>
+          Sign In
+        </Button>
       </LoginContent>
     </LoginWrapper>
   );
 };
+
+const mapStateToProps = (state) => {
+  return {
+    userData: state.user,
+  };
+};
+
+const mapDispatchToProps = {
+  setUser,
+  setAuth,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

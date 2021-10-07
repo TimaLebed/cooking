@@ -13,9 +13,9 @@ const Home = ({ fetchRecipes, recipesData }) => {
   // useEffect(() => {
   //   return () => fetchRecipes();
   // }, []);
-  useEffect(() => {
-    fetchRecipes();
-  }, []);
+  // useEffect(() => {
+  //   fetchRecipes();
+  // }, []);
 
   return (
     <Wrapper>
