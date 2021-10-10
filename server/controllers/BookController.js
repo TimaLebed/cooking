@@ -1,8 +1,14 @@
-import Book from "../models/books.js";
 import ApiError from "../error/ApiError.js";
+import Models from "../models/index.js";
+
+const { Books } = Models;
 
 class BookController {
-  async get(req, res) {}
+  async getAllBooks(req, res) {
+    const books = await Books.findAll();
+
+    return res.json(books);
+  }
 
   async create(req, res) {
     try {
@@ -11,7 +17,7 @@ class BookController {
 
       return res.json({ type });
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   }
 }

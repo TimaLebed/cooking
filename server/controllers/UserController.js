@@ -3,7 +3,9 @@ import jwt from "jsonwebtoken";
 import config from "config";
 
 import ApiError from "../error/ApiError.js";
-import User from "../models/users.js";
+import Models from "../models/index.js";
+
+const { Users } = Models;
 
 const generateJwt = (id, email, role) => {
   return jwt.sign({ id, email, role }, config.get("SECRET_KEY"), {
@@ -19,15 +21,14 @@ class UserController {
       return next(ApiError.failRequest("Некорректный email или password!"));
     }
 
-    const candidate = await User.findOne({ where: { email } });
+    const candidate = await Users.findOne({ where: { email } });
 
     if (candidate) {
       return next(ApiError.failRequest("Пользователь с email уже существует!"));
     }
 
     const hashPassword = await bcrypt.hash(password, 5);
-    const user = await User.create({ email, role, password: hashPassword });
-    const basket = await Basket.create({ userId: user.id });
+    const user = await Users.create({ email, role, password: hashPassword });
     const token = generateJwt(user.id, user.email, user.role);
 
     return res.json({ token });
@@ -35,15 +36,15 @@ class UserController {
 
   async login(req, res, next) {
     const { email, password } = req.body;
-    const user = await User.findOne({ where: { email } });
+    const user = await Users.findOne({ where: { email } });
 
     if (!user) {
       return next(ApiError.internal("Пользователь с email не найден"));
     }
 
-    let comparePassword = bcrypt.compareSync(password, user.password);
+    let comparePassword = bcrypt.compare(password, user.password);
 
-    if(!comparePassword) {
+    if (!comparePassword) {
       return next(ApiError.internal("Неверный пароль"));
     }
 

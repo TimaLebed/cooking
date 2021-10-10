@@ -19,7 +19,7 @@ const BooksResult = ({ books }) => {
         card={item}
         setPopupActive={setPopupActive}
         setClickedCardId={setClickedCardId}
-      ></Card>
+      />
     );
   });
 

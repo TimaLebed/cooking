@@ -2,7 +2,7 @@ import { HttpClient } from "./HttpClient";
 
 class BookApi extends HttpClient {
   constructor() {
-    super("http://localhost:5000");
+    super("http://localhost:5000/api");
   }
 
   static getInstance() {

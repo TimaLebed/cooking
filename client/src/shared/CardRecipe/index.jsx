@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { v4 as uuidv4 } from 'uuid';
 
 import {
   CardWrapper,
@@ -28,7 +29,7 @@ const CardRecipe = ({card, setPopupActive, setClickedCardId}) => {
   };
 
   return (
-    <CardWrapper id={card.id} onClick={handelClickCard}>
+    <CardWrapper id={uuidv4()} onClick={handelClickCard}>
       <CardImg cardImg={card.img} alt="" />
       <Content>
         <WrapperTitleAuthor>
@@ -53,21 +54,35 @@ CardRecipe.propTypes = {
   setPopupActive: PropTypes.func,
   setClickedCardId: PropTypes.func,
   card: PropTypes.exact({
-    id: PropTypes.string,
+    description: PropTypes.string,
+    directions: PropTypes.array,
+    ingredients: PropTypes.array,
     img: PropTypes.string,
     title: PropTypes.string,
     author: PropTypes.string,
-    description: PropTypes.string,
+    views: PropTypes.string,
+    likes: PropTypes.string,
+    comments: PropTypes.string,
+    createdAt: PropTypes.string,
+    updatedAt: PropTypes.string,
+    id: PropTypes.number,
   }),
 };
 
 CardRecipe.defaultProps = {
   card: {
-    id: "",
+    directions: [],
+    ingredients: [],
+    description: "",
     img: "",
     title: "",
     author: "",
-    description: "",
+    views: "",
+    likes: "",
+    comments: "",
+    createdAt: null,
+    updatedAt: null,
+    id: null,
   },
   setPopupActive: () => {},
   setClickedCardId: () => {},

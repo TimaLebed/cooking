@@ -73,7 +73,11 @@ PopupBook.propTypes = {
     title: PropTypes.string,
     author: PropTypes.string,
     likes: PropTypes.string,
+    views: PropTypes.string,
     comments: PropTypes.string,
+    createdAt: PropTypes.string,
+    updatedAt: PropTypes.string,
+    id: PropTypes.number,
   }),
 };
 
@@ -88,6 +92,10 @@ PopupBook.defaultProps = {
     author: "",
     likes: "",
     comments: "",
+    views: "",
+    createdAt: null,
+    updatedAt: null,
+    id: null,
   },
 };
 

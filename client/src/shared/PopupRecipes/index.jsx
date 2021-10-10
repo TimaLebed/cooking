@@ -97,6 +97,9 @@ PopupRecipes.propTypes = {
     views: PropTypes.string,
     likes: PropTypes.string,
     comments: PropTypes.string,
+    createdAt: PropTypes.string,
+    updatedAt: PropTypes.string,
+    id: PropTypes.number,
   }),
 };
 
@@ -113,6 +116,9 @@ PopupRecipes.defaultProps = {
     views: "",
     likes: "",
     comments: "",
+    createdAt: null,
+    updatedAt: null,
+    id: null,
   },
 };
 
