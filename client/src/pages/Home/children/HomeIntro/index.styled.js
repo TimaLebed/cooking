@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { css } from '@emotion/react';
+import { css } from "@emotion/react";
 
 export const HomeWrapper = styled.div`
   height: 814px;
@@ -38,8 +38,8 @@ export const HomeTitle = styled.h1`
   font-size: 56px;
   text-align: left;
   line-height: 72px;
-  color: #FFFFFF;
-	font-family: "Montserrat-SemiBold", sans-serif;
+  color: #ffffff;
+  font-family: "Montserrat-SemiBold", sans-serif;
 `;
 
 export const Form = styled.form`
@@ -50,18 +50,20 @@ export const Input = styled.input`
   width: 1016px;
   height: 70px;
   color: #494949;
-  background-color: #F7F7F7;
+  background-color: #f7f7f7;
   font-size: 18px;
-	font-family: "Nunito-Regular", sans-serif;
+  font-family: "Nunito-Regular", sans-serif;
   padding-left: 64px;
   border-radius: 10px;
   outline: none;
-  border: none;position: relative;
+  border: none;
+  position: relative;
 
   &:focus {
     border-color: #2188ff;
     outline: none;
-    box-shadow: inset 0 1px 2px rgba(27,31,35,0.075), 0 0 0 0.2em rgba(3,102,214,0.3);
+    box-shadow: inset 0 1px 2px rgba(27, 31, 35, 0.075),
+      0 0 0 0.2em rgba(3, 102, 214, 0.3);
   }
 `;
 
@@ -84,6 +86,6 @@ export const HomeNav = styled.nav`
   justify-content: space-between;
   font-size: 18px;
   line-height: 22px;
-  color: #FFFFFF;
-	font-family: "Nunito-Regular", sans-serif;
+  color: #ffffff;
+  font-family: "Nunito-Regular", sans-serif;
 `;

@@ -5,9 +5,7 @@ import Home from "./pages/Home";
 import Search from "./pages/Search";
 import SignUp from "./pages/SignUp";
 import Login from "./pages/LogIn";
-
-import { WithHeaderAndFooter } from "./hoc/WithHeaderAndFooter";
-
+import WithHeaderAndFooter from "./hoc/WithHeaderAndFooter";
 import {
   ADMIN_ROUTE,
   HOME_ROUTE,
@@ -29,7 +27,7 @@ export const publicRoutes = [
     path: HOME_ROUTE,
     Component: () => (
       <WithHeaderAndFooter>
-        <Home></Home>
+        <Home />
       </WithHeaderAndFooter>
     ),
   },
@@ -45,7 +43,7 @@ export const publicRoutes = [
     path: BOOKS_ROUTE,
     Component: () => (
       <WithHeaderAndFooter>
-        <Search routePath={BOOKS_ROUTE}></Search>
+        <Search routePath={BOOKS_ROUTE} />
       </WithHeaderAndFooter>
     ),
   },
@@ -53,7 +51,7 @@ export const publicRoutes = [
     path: RECIPES_ROUTE,
     Component: () => (
       <WithHeaderAndFooter>
-        <Search routePath={RECIPES_ROUTE}></Search>
+        <Search routePath={RECIPES_ROUTE} />
       </WithHeaderAndFooter>
     ),
   },

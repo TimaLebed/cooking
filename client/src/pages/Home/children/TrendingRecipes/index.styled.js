@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { css } from '@emotion/react';
+import { css } from "@emotion/react";
 
 export const TrendingWrapper = styled.div`
   height: 986px;
@@ -28,7 +28,7 @@ export const TrendingSuptitle = styled.p`
   line-height: 24px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #ffffff;
   font-family: "Nunito-Regular", sans-serif;
 `;
 
@@ -38,7 +38,7 @@ export const TrendingTitle = styled.h2`
   font-size: 40px;
   line-height: 48px;
   color: #181818;
-	font-family: "Montserrat-Bold", sans-serif;
+  font-family: "Montserrat-Bold", sans-serif;
   text-align: center;
 `;
 
@@ -56,15 +56,19 @@ export const Arrow = styled.button`
   background-color: inherit;
   border: 0;
   outline: none;
-  color: #FFF;
+  color: #fff;
 
-  ${props => props.left && css`
-    left: -7%;
-  `}
+  ${(props) =>
+    props.left &&
+    css`
+      left: -7%;
+    `}
 
-  ${props => props.right && css`
-    right: -7%;
-  `}
+  ${(props) =>
+    props.right &&
+    css`
+      right: -7%;
+    `}
 `;
 
 export const CardsPagination = styled.div`

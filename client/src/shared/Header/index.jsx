@@ -1,8 +1,11 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { Logo } from "../Logo";
-import { Button } from "../Button";
+
+import Logo from "../Logo";
+import Button from "../Button";
+import { setUser, setAuth } from "../../redux";
 import { BOOKS_ROUTE, RECIPES_ROUTE } from "../../utils/constants";
 import {
   HeaderWrapper,
@@ -13,21 +16,22 @@ import {
   HeaderIcon,
 } from "./index.styled";
 
-const Header = ({ userData }) => {
+const Header = ({ userData, setUser, setAuth }) => {
+  const signOut = () => {
+    setUser(null);
+    setAuth(false);
+  };
+
   return (
     <HeaderWrapper>
       <HeaderInner>
-        <Logo></Logo>
+        <Logo />
         <HeaderNav>
           <Link to={RECIPES_ROUTE}>Recepies</Link>
           <Link to={BOOKS_ROUTE}>Cookbooks</Link>
         </HeaderNav>
         <HeaderForm>
-          <HeaderInput
-            type="text"
-            // value={props.searchValue}
-            // onChange={props.onSearchInput}
-          />
+          <HeaderInput type="text" />
           <HeaderIcon height="16" version="1.1" viewBox="0 0 16 16" width="16">
             <path
               fillRule="evenodd"
@@ -36,10 +40,49 @@ const Header = ({ userData }) => {
           </HeaderIcon>
         </HeaderForm>
         <Button>Create cookBook</Button>
-        {userData.isAuth ? userData.user.email : <Link to="/login">Sign in</Link>}
+        {userData.isAuth ? (
+          ((<h5>{userData.user.email}</h5>),
+          (
+            <Link to="/login" onClick={() => signOut()}>
+              Sign out
+            </Link>
+          ))
+        ) : (
+          <Link to="/login">Sign in</Link>
+        )}
       </HeaderInner>
     </HeaderWrapper>
   );
+};
+
+Header.propTypes = {
+  setAuth: PropTypes.func,
+  setUser: PropTypes.func,
+  userData: PropTypes.exact({
+    isAuth: PropTypes.bool,
+    user: PropTypes.exact({
+      email: PropTypes.string,
+      role: PropTypes.string,
+      id: PropTypes.number,
+      iat: PropTypes.number,
+      exp: PropTypes.number,
+    }),
+  }),
+};
+
+Header.defaultProps = {
+  userData: {
+    isAuth: false,
+    user: {
+      email: "",
+      role: "",
+      id: 0,
+      iat: 0,
+      exp: 0,
+    },
+  },
+  setUser: () => {},
+  setAuth: () => {},
 };
 
 const mapStateToProps = (state) => {
@@ -48,4 +91,9 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(Header);
+const mapDispatchToProps = {
+  setUser,
+  setAuth,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

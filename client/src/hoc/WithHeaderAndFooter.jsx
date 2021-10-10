@@ -1,12 +1,23 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import Header from "../shared/Header";
-import { Footer } from "../shared/Footer";
+import Footer from "../shared/Footer";
 
-export const WithHeaderAndFooter = ({ children }) => (
+const WithHeaderAndFooter = ({ children }) => (
   <>
-    <Header></Header>
+    <Header />
     {children}
-    <Footer></Footer>
+    <Footer />
   </>
 );
+
+WithHeaderAndFooter.propTypes = {
+  children: PropTypes.node,
+};
+
+WithHeaderAndFooter.defaultProps = {
+  children: null,
+};
+
+export default WithHeaderAndFooter;

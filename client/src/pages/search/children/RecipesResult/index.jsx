@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 
-import { CardRecipe } from "../../../../shared/CardRecipe";
-import { PopupRecipes } from "../../../../shared/PopupRecipes";
+import CardRecipe from "../../../../shared/CardRecipe";
+import PopupRecipes from "../../../../shared/PopupRecipes";
 import { RecipesWrapper } from "./index.styled";
 
-export const RecipesResult = ({ recipes }) => {
+const RecipesResult = ({ recipes }) => {
   const [popupActive, setPopupActive] = useState(false);
   const [clickedCardId, setClickedCardId] = useState(null);
 
@@ -18,20 +19,19 @@ export const RecipesResult = ({ recipes }) => {
         card={item}
         setPopupActive={setPopupActive}
         setClickedCardId={setClickedCardId}
-      ></CardRecipe>
+      />
     );
   });
 
   const popup = recipes.map((item, index) => {
     if (index === Number(clickedCardId)) {
-
       return (
         <PopupRecipes
           key={item.id}
           active={popupActive}
           setActive={setPopupActive}
           clickedCard={item}
-        ></PopupRecipes>
+        />
       );
     }
   });
@@ -46,3 +46,13 @@ export const RecipesResult = ({ recipes }) => {
     </>
   );
 };
+
+RecipesResult.propTypes = {
+  recipes: PropTypes.array,
+};
+
+RecipesResult.defaultProps = {
+  recipes: [],
+};
+
+export default RecipesResult;

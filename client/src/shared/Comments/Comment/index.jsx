@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 import {
   CommentWrapper,
   Img,
@@ -6,10 +8,10 @@ import {
   WrapperAuthorTime,
   Author,
   Time,
-  Description
+  Description,
 } from "./index.styled";
 
-export const Comment = ({ person }) => {
+const Comment = ({ person }) => {
   return (
     <CommentWrapper>
       <Img img={person.img} alt=""></Img>
@@ -22,4 +24,22 @@ export const Comment = ({ person }) => {
       </WrapperContent>
     </CommentWrapper>
   );
-}
+};
+
+Comment.propTypes = {
+  person: PropTypes.exact({
+    img: PropTypes.string,
+    author: PropTypes.string,
+    description: PropTypes.string,
+  }),
+};
+
+Comment.defaultProps = {
+  person: {
+    img: "",
+    author: "",
+    description: "",
+  },
+};
+
+export default Comment;

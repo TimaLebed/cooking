@@ -1,21 +1,16 @@
 import React, { useEffect } from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-import { Filter } from "./children/Filter";
-import { BooksResult } from "./children/BooksResult";
-import { RecipesResult } from "./children/RecipesResult";
+import Filter from "./children/Filter";
+import BooksResult from "./children/BooksResult";
+import RecipesResult from "./children/RecipesResult";
 import { fetchBooks, fetchRecipes } from "../../redux";
 import { Wrapper, Inner, Content, Nav } from "./index.styled";
 import { BOOKS_ROUTE, RECIPES_ROUTE } from "../../utils/constants";
 
-const Search = ({
-  fetchBooks,
-  fetchRecipes,
-  booksData,
-  recipesData,
-  routePath,
-}) => {
+const Search = ({ fetchBooks, fetchRecipes, booksData, recipesData }) => {
   useEffect(() => {
     fetchBooks();
     fetchRecipes();
@@ -30,9 +25,7 @@ const Search = ({
       <Wrapper>
         <Inner>
           <div>
-            <Filter
-              handleFilters={(filters) => handleFilters(filters)}
-            ></Filter>
+            <Filter handleFilters={(filters) => handleFilters(filters)}></Filter>
           </div>
           <Content>
             <Nav>
@@ -60,6 +53,36 @@ const Search = ({
       </Wrapper>
     </Router>
   );
+};
+
+Search.propTypes = {
+  fetchBooks: PropTypes.func,
+  fetchRecipes: PropTypes.func,
+  booksData: PropTypes.exact({
+    loading: PropTypes.bool,
+    books: PropTypes.array,
+    error: PropTypes.string,
+  }),
+  recipesData: PropTypes.exact({
+    loading: PropTypes.bool,
+    recipes: PropTypes.array,
+    error: PropTypes.string,
+  }),
+};
+
+Search.defaultProps = {
+  fetchBooks: () => {},
+  fetchRecipes: () => {},
+  booksData: {
+    loading: false,
+    books: [],
+    error: "",
+  },
+  recipesData: {
+    loading: false,
+    recipes: [],
+    error: "",
+  },
 };
 
 const mapStateToProps = (state) => {

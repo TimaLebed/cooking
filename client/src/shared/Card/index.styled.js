@@ -9,21 +9,21 @@ export const CardWrapper = styled.div`
   border-radius: 10px;
   background-color: #fff;
 
-  ${(props) =>
-    props.trending &&
+  ${({ trending }) =>
+    trending &&
     css`
       width: 392px;
       height: 460px;
     `}
 
-  ${(props) =>
-    props.description &&
+  ${({ description }) =>
+    description &&
     css`
       height: 487px;
     `}
 
-    ${(props) =>
-    props.recipesResult &&
+    ${({ recipesResult }) =>
+    recipesResult &&
     css`
       width: 912px;
       height: 212px;
@@ -55,8 +55,8 @@ export const CardViews = styled.p`
     transition: all 0.3s;
   }
 
-  ${(props) =>
-    props.recipesResult &&
+  ${({ recipesResult }) =>
+    recipesResult &&
     css`
       margin: 0;
       top: 169px;
@@ -79,8 +79,8 @@ export const ButtonEdit = styled.button`
   background-repeat: no-repeat;
   cursor: pointer;
 
-  ${(props) =>
-    props.recipesResult &&
+  ${({ recipesResult }) =>
+    recipesResult &&
     css`
       top: 184px;
     `}
@@ -91,19 +91,19 @@ export const CardImg = styled.img`
   width: 240px;
   height: 240px;
   border-radius: 50px 10px;
-  background-image: url(${(props) => props.card.img});
+  background-image: url(${({ cardImg }) => cardImg});
   background-repeat: no-repeat;
   background-size: contain;
 
-  ${(props) =>
-    props.trending &&
+  ${({ trending }) =>
+    trending &&
     css`
       width: 344px;
       height: 344px;
     `}
 
-  ${(props) =>
-    props.recipesResult &&
+  ${({ recipesResult }) =>
+    recipesResult &&
     css`
       width: 288px;
       height: 212px;
@@ -122,14 +122,14 @@ export const WrapperTitleAuthor = styled.div`
   width: 240px;
   margin: 16px auto 0;
 
-  ${(props) =>
-    props.trending &&
+  ${({ trending }) =>
+    trending &&
     css`
       width: 344px;
     `}
 
-  ${(props) =>
-    props.recipesResult &&
+  ${({ recipesResult }) =>
+    recipesResult &&
     css`
       margin: 6px 24px 0 0;
       width: 576px;
@@ -145,19 +145,18 @@ export const CardDescription = styled.p`
   font-size: 14px;
   line-height: 19px;
   color: #181818;
-  ${'' /* white-space: nowrap; */}
   overflow: hidden;
   text-overflow: ellipsis;
 
-  ${(props) =>
-    props.description &&
+  ${({ description }) =>
+    description &&
     css`
       display: block;
       margin: 16px auto 0px;
     `}
 
-  ${(props) =>
-    props.recipesResult &&
+  ${({ recipesResult }) =>
+    recipesResult &&
     css`
       width: 576px;
       height: 57px;
@@ -189,14 +188,14 @@ export const WrapperLikesComments = styled.div`
   width: 240px;
   margin: 32px auto 0;
 
-  ${(props) =>
-    props.trending &&
+  ${({ trending }) =>
+    trending &&
     css`
       display: none;
     `}
 
-  ${(props) =>
-    props.recipesResult &&
+  ${({ recipesResult }) =>
+    recipesResult &&
     css`
       margin: 48px 245px 0 0px;
     `}

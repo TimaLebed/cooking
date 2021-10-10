@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { css } from "@emotion/react";
 
 export const CardWrapper = styled.div`
   width: 912px;
@@ -15,7 +14,7 @@ export const CardImg = styled.img`
   width: 288px;
   height: 212px;
   border-radius: 50px 10px;
-  background-image: url(${(props) => props.card.img});
+  background-image: url(${({ cardImg }) => cardImg});
   background-repeat: no-repeat;
   background-size: cover;
 `;
@@ -78,7 +77,6 @@ export const CardDescription = styled.p`
   font-size: 14px;
   line-height: 19px;
   color: #181818;
-  ${"" /* white-space: nowrap; */}
   overflow: hidden;
   text-overflow: ellipsis;
 `;

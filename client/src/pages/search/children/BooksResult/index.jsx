@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 
-import { Card } from "../../../../shared/Card";
-import { PopupBook } from "../../../../shared/PopupBook";
+import Card from "../../../../shared/Card";
+import PopupBook from "../../../../shared/PopupBook";
 import { BooksWrapper } from "./index.styled";
 
-export const BooksResult = ({ books }) => {
+const BooksResult = ({ books }) => {
   const [popupActive, setPopupActive] = useState(false);
   const [clickedCardId, setClickedCardId] = useState(null);
 
@@ -47,3 +48,13 @@ export const BooksResult = ({ books }) => {
     </>
   );
 };
+
+BooksResult.propTypes = {
+  books: PropTypes.array,
+};
+
+BooksResult.defaultProps = {
+  books: [],
+};
+
+export default BooksResult;

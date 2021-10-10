@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import PropTypes from "prop-types";
 
-import { Card } from "../Card";
-import { Button } from "../Button";
-import { Comments } from "../Comments";
+import Button from "../Button";
+import Comments from "../Comments";
 import {
   PopupWrapper,
   PopupInner,
@@ -27,7 +27,7 @@ import {
   Comment,
 } from "./index.styled";
 
-export const PopupRecipes = ({ active, setActive, clickedCard }) => {
+const PopupRecipes = ({ active, setActive, clickedCard }) => {
   const handelClickPopupWrapper = () => {
     setActive(false);
   };
@@ -51,7 +51,7 @@ export const PopupRecipes = ({ active, setActive, clickedCard }) => {
   return (
     <PopupWrapper active={active} onClick={handelClickPopupWrapper}>
       <PopupInner active={active} onClick={handelClickPopup}>
-        <Img img={clickedCard.img} alt=""></Img>
+        <Img img={clickedCard.img} alt="" />
         <Content>
           <WrapperTitleAuthor>
             <Title>{clickedCard.title}</Title>
@@ -66,16 +66,10 @@ export const PopupRecipes = ({ active, setActive, clickedCard }) => {
             <Directions>
               <DirectionTitle>Directions</DirectionTitle>
               {DirectionSteps}
-              {/* <DirectionStep>
-                <span>Step 1</span>: Do something
-              </DirectionStep> */}
             </Directions>
             <Ingredients>
               <IngredientTitle>Ingredients</IngredientTitle>
               {IngredientSteps}
-              {/* <IngredientsStep>
-                <span>Step 1</span>: Do something
-              </IngredientsStep> */}
             </Ingredients>
           </WrapperDirectionsIngredients>
           <ViewsLikesComments>
@@ -84,8 +78,42 @@ export const PopupRecipes = ({ active, setActive, clickedCard }) => {
             <Comment>{clickedCard.comments} comments</Comment>
           </ViewsLikesComments>
         </Content>
-        <Comments></Comments>
+        <Comments />
       </PopupInner>
     </PopupWrapper>
   );
 };
+
+PopupRecipes.propTypes = {
+  active: PropTypes.bool,
+  setActive: PropTypes.func,
+  clickedCard: PropTypes.exact({
+    description: PropTypes.string,
+    directions: PropTypes.array,
+    ingredients: PropTypes.array,
+    img: PropTypes.string,
+    title: PropTypes.string,
+    author: PropTypes.string,
+    views: PropTypes.string,
+    likes: PropTypes.string,
+    comments: PropTypes.string,
+  }),
+};
+
+PopupRecipes.defaultProps = {
+  active: false,
+  setActive: () => {},
+  clickedCard: {
+    directions: [],
+    ingredients: [],
+    description: "",
+    img: "",
+    title: "",
+    author: "",
+    views: "",
+    likes: "",
+    comments: "",
+  },
+};
+
+export default PopupRecipes;

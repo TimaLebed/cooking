@@ -14,7 +14,13 @@ const Basket = db.define("basket", {
 
 const Book = db.define("book", {
   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-  name: { type: DataTypes.STRING, unique: true, allowNull: false },
+  views: { type: DataTypes.STRING },
+  title: { type: DataTypes.STRING },
+  author: { type: DataTypes.STRING },
+  likes: { type: DataTypes.STRING },
+  comments: { type: DataTypes.STRING },
+  description: { type: DataTypes.STRING },
+  img: { type: DataTypes.STRING },
 });
 
 const Recipe = db.define("recipe", {

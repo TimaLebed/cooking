@@ -1,50 +1,61 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
-import { HomeIntro } from "./children/HomeIntro";
-import { PopularRecipes } from "./children/PopularRecipes";
-import { PopularBooks } from "./children/PopularBooks";
-import { TrendingRecipes } from "./children/TrendingRecipes";
+import HomeIntro from "./children/HomeIntro";
+import PopularRecipes from "./children/PopularRecipes";
+import PopularBooks from "./children/PopularBooks";
+import TrendingRecipes from "./children/TrendingRecipes";
+import Wrapper from "./index.styled";
 import { fetchRecipes } from "../../redux";
 
-import { Wrapper } from "./index.styled";
-
 const Home = ({ fetchRecipes, recipesData }) => {
-  // useEffect(() => {
-  //   return () => fetchRecipes();
-  // }, []);
-  // useEffect(() => {
-  //   fetchRecipes();
-  // }, []);
+  useEffect(() => {
+    fetchRecipes();
+  }, []);
 
   return (
     <Wrapper>
-      <HomeIntro></HomeIntro>
+      <HomeIntro />
       {recipesData.loading ? (
         "loading..."
       ) : (
-        <PopularRecipes recipes={recipesData.recipes}></PopularRecipes>
+        <PopularRecipes recipes={recipesData.recipes} />
       )}
-      <PopularBooks></PopularBooks>
+      <PopularBooks />
       {recipesData.loading ? (
         "loading..."
       ) : (
-        <TrendingRecipes recipes={recipesData.recipes}></TrendingRecipes>
+        <TrendingRecipes recipes={recipesData.recipes} />
       )}
     </Wrapper>
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    recipesData: state.recipes,
-  };
+Home.propTypes = {
+  fetchRecipes: PropTypes.func,
+  recipesData: PropTypes.exact({
+    recipes: PropTypes.array,
+    loading: PropTypes.bool,
+    error: PropTypes.string,
+  }),
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    fetchRecipes: () => dispatch(fetchRecipes()),
-  };
+Home.defaultProps = {
+  fetchRecipes: () => {},
+  recipesData: {
+    recipes: [],
+    loading: false,
+    error: "",
+  },
 };
+
+const mapStateToProps = (state) => ({
+  recipesData: state.recipes,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  fetchRecipes: () => dispatch(fetchRecipes()),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

@@ -1,4 +1,4 @@
-import { SET_USER, SET_AUTH} from "./userTypes";
+import { SET_USER, SET_AUTH } from "./userTypes";
 
 export const setUser = (user) => {
   return {

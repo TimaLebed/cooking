@@ -7,10 +7,7 @@ export class HttpClient {
   }
 
   initializeResponseInterceptor() {
-    this.instance.interceptors.response.use(
-      this.handleSuccess,
-      this.handleError
-    );
+    this.instance.interceptors.response.use(this.handleSuccess, this.handleError);
   }
 
   handleSuccess({ data }) {

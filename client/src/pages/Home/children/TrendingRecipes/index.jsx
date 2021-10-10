@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 
-import { Button } from "../../../../shared/Button";
-import { Card } from "../../../../shared/Card";
-import { PopupRecipes } from "../../../../shared/PopupRecipes";
+import Button from "../../../../shared/Button";
+import Card from "../../../../shared/Card";
+import PopupRecipes from "../../../../shared/PopupRecipes";
 import {
   TrendingWrapper,
   TrendingContent,
@@ -13,22 +14,10 @@ import {
   CardsPagination,
 } from "./index.styled";
 
-export const TrendingRecipes = ({ recipes }) => {
+const TrendingRecipes = ({ recipes }) => {
   const [popupActive, setPopupActive] = useState(false);
   const [clickedCardId, setClickedCardId] = useState(null);
-
-  const popup = recipes.map((item, index) => {
-    if (index === Number(clickedCardId)) {
-      return (
-        <PopupRecipes
-          key={item.id}
-          active={popupActive}
-          setActive={setPopupActive}
-          clickedCard={item}
-        ></PopupRecipes>
-      );
-    }
-  });
+  const recipe = recipes.find((item, index) => index === Number(clickedCardId));
 
   const cards = recipes.map((item, index) => {
     if (index === 3) return null;
@@ -40,7 +29,7 @@ export const TrendingRecipes = ({ recipes }) => {
         card={item}
         setPopupActive={setPopupActive}
         setClickedCardId={setClickedCardId}
-      ></Card>
+      />
     );
   });
 
@@ -53,11 +42,26 @@ export const TrendingRecipes = ({ recipes }) => {
           <CardsSlider>{cards}</CardsSlider>
           <Arrow left>&lt;</Arrow>
           <Arrow right>&gt;</Arrow>
-          <CardsPagination></CardsPagination>
+          <CardsPagination />
           <Button>Show All Recipies</Button>
         </TrendingContent>
       </TrendingWrapper>
-      {popup}
+      <PopupRecipes
+        // key={recipe.id}
+        active={popupActive}
+        setActive={setPopupActive}
+        clickedCard={recipe}
+      />
     </>
   );
 };
+
+TrendingRecipes.propTypes = {
+  recipes: PropTypes.array,
+};
+
+TrendingRecipes.defaultProps = {
+  recipes: [],
+};
+
+export default TrendingRecipes;

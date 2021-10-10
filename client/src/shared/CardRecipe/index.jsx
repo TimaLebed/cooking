@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import {
   CardWrapper,
@@ -16,34 +17,60 @@ import {
   CardComments,
 } from "./index.styled";
 
-export const CardRecipe = (props) => {
+const CardRecipe = ({card, setPopupActive, setClickedCardId}) => {
   const randomNumber = (n) => Math.floor(Math.random() * n);
 
   const handelClickCard = (event) => {
     const currentCardId = event.target.offsetParent.id;
 
-    props.setPopupActive(true);
-    props.setClickedCardId(currentCardId);
+    setPopupActive(true);
+    setClickedCardId(currentCardId);
   };
 
   return (
-    <CardWrapper id={props.card.id} {...props} onClick={handelClickCard}>
-      <CardImg {...props} alt=""></CardImg>
+    <CardWrapper id={card.id} onClick={handelClickCard}>
+      <CardImg cardImg={card.img} alt="" />
       <Content>
-        <WrapperTitleAuthor {...props}>
-          <CardTitle>{props.card.title}</CardTitle>
-          <CardAuthor>{props.card.author}</CardAuthor>
+        <WrapperTitleAuthor>
+          <CardTitle>{card.title}</CardTitle>
+          <CardAuthor>{card.author}</CardAuthor>
         </WrapperTitleAuthor>
-        <CardDescription {...props}>{props.card.description}</CardDescription>
+        <CardDescription>{card.description}</CardDescription>
         <Wrapper>
-          <WrapperViewsLikesComments {...props}>
-            <CardViews {...props}>{randomNumber(90000)} views</CardViews>
+          <WrapperViewsLikesComments>
+            <CardViews>{randomNumber(90000)} views</CardViews>
             <CardLikes>{randomNumber(1000)} likes</CardLikes>
             <CardComments>{randomNumber(300)} comments</CardComments>
           </WrapperViewsLikesComments>
-          <ButtonEdit {...props}></ButtonEdit>
+          <ButtonEdit />
         </Wrapper>
       </Content>
     </CardWrapper>
   );
 };
+
+CardRecipe.propTypes = {
+  setPopupActive: PropTypes.func,
+  setClickedCardId: PropTypes.func,
+  card: PropTypes.exact({
+    id: PropTypes.string,
+    img: PropTypes.string,
+    title: PropTypes.string,
+    author: PropTypes.string,
+    description: PropTypes.string,
+  }),
+};
+
+CardRecipe.defaultProps = {
+  card: {
+    id: "",
+    img: "",
+    title: "",
+    author: "",
+    description: "",
+  },
+  setPopupActive: () => {},
+  setClickedCardId: () => {},
+};
+
+export default CardRecipe;

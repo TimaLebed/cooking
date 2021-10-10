@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { css } from '@emotion/react';
 
 export const HeaderWrapper = styled.header`
   width: 100%;
@@ -17,7 +16,7 @@ export const HeaderInner = styled.div`
   align-items: center;
   justify-content: space-between;
   color: #181818;
-	font-family: "Nunito-Regular" , sans-serif;
+  font-family: "Nunito-Regular", sans-serif;
 `;
 
 export const HeaderNav = styled.nav`
@@ -27,7 +26,7 @@ export const HeaderNav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
-	font-family: "Nunito-Regular" , sans-serif;
+  font-family: "Nunito-Regular", sans-serif;
   line-height: 22px;
   color: #181818;
 `;
@@ -41,7 +40,7 @@ export const HeaderInput = styled.input`
   width: 284px;
   height: 40px;
   color: rgb(88, 96, 105);
-  background-color: #F7F7F7;
+  background-color: #f7f7f7;
   font-size: 14px;
   /* padding: 6px 8px; */
   padding-left: 37px;
@@ -52,7 +51,8 @@ export const HeaderInput = styled.input`
   &:focus {
     border-color: #2188ff;
     outline: none;
-    box-shadow: inset 0 1px 2px rgba(27,31,35,0.075), 0 0 0 0.2em rgba(3,102,214,0.3);
+    box-shadow: inset 0 1px 2px rgba(27, 31, 35, 0.075),
+      0 0 0 0.2em rgba(3, 102, 214, 0.3);
   }
 `;
 

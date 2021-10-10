@@ -15,8 +15,8 @@ export const StyledButton = styled.button`
   font-family: "Nunito-Bold", sans-serif;
   cursor: pointer;
 
-  ${(props) =>
-    props.inputHome &&
+  ${({ inputHome }) =>
+    inputHome &&
     css`
       width: 146px;
       position: absolute;
@@ -27,8 +27,8 @@ export const StyledButton = styled.button`
       border: none;
     `}
 
-    ${(props) =>
-    props.details &&
+  ${({ details }) =>
+    details &&
     css`
       position: absolute;
       right: 56px;

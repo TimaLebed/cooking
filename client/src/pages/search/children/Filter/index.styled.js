@@ -108,7 +108,7 @@ export const SpanFake = styled.span`
     display: block;
     width: 20px;
     height: 20px;
-    background-color: #FFBC01;
+    background-color: #ffbc01;
     opacity: 0;
     transition: 0.2s;
   }

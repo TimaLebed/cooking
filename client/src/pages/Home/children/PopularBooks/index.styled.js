@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { css } from '@emotion/react';
+import { css } from "@emotion/react";
 
 export const BooksWrapper = styled.div`
   height: 1034px;
@@ -26,7 +26,7 @@ export const BooksSuptitle = styled.p`
   line-height: 24px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: #FFBC01;
+  color: #ffbc01;
   font-family: "Nunito-Regular", sans-serif;
 `;
 
@@ -36,7 +36,7 @@ export const BooksTitle = styled.h2`
   font-size: 40px;
   line-height: 48px;
   color: #181818;
-	font-family: "Montserrat-Bold", sans-serif;
+  font-family: "Montserrat-Bold", sans-serif;
   text-align: center;
 `;
 
@@ -54,26 +54,34 @@ export const Card = styled.div`
   border-radius: 50px 10px;
   position: relative;
 
-  ${props => props.large && css`
-    width: 600px;
-    height: 540px;
-    /* background: url(../../../../../static/images/books/all-pancakes.png), linear-gradient(to top, rgba(255,0,0,0.3), rgba(255,0,0,0.3)); */
-    background-image: url(../../../../../static/images/books/all-pancakes.png);
-  `}
+  ${(props) =>
+    props.large &&
+    css`
+      width: 600px;
+      height: 540px;
+      /* background: url(../../../../../static/images/books/all-pancakes.png), linear-gradient(to top, rgba(255,0,0,0.3), rgba(255,0,0,0.3)); */
+      background-image: url(../../../../../static/images/books/all-pancakes.png);
+    `}
 
-  ${props => props.medium && css`
-    width: 600px;
-    height: 258px;
-    background-image: url(../../../../../static/images/books/icecream.png);
-  `}
+  ${(props) =>
+    props.medium &&
+    css`
+      width: 600px;
+      height: 258px;
+      background-image: url(../../../../../static/images/books/icecream.png);
+    `}
 
-  ${props => props.left && css`
-    background-image: url(../../../../../static/images/books/fast-breakfast.png);
-  `}
+  ${(props) =>
+    props.left &&
+    css`
+      background-image: url(../../../../../static/images/books/fast-breakfast.png);
+    `}
 
-  ${props => props.right && css`
-    background-image: url(../../../../../static/images/books/fruit-veg.png);
-  `}
+  ${(props) =>
+    props.right &&
+    css`
+      background-image: url(../../../../../static/images/books/fruit-veg.png);
+    `}
 `;
 
 export const ContainerThreeCards = styled.div`
@@ -94,12 +102,12 @@ export const CardButton = styled.button`
   justify-content: center;
   padding: 8px 24px;
   border: none;
-  background-color: #FFF;
+  background-color: #fff;
   border-radius: 10px;
   color: #181818;
   font-size: 18px;
   line-height: 22px;
-	font-family: "Nunito-Bold", sans-serif;
+  font-family: "Nunito-Bold", sans-serif;
   cursor: pointer;
 `;
 

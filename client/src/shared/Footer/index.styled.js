@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { css } from '@emotion/react';
 
 export const FooterWrapper = styled.footer`
   width: 100%;
@@ -26,26 +25,26 @@ export const FooterNav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
-	font-family: "Nunito-Regular" , sans-serif;
+  font-family: "Nunito-Regular", sans-serif;
   text-decoration: none;
   line-height: 22px;
-  color: #F7F7F7;
+  color: #f7f7f7;
 `;
 
 export const FooterLinkEmail = styled.a`
   font-size: 16px;
   line-height: 22px;
-  color: #FFBC01;
-	font-family: "Nunito-Regular" , sans-serif;
+  color: #ffbc01;
+  font-family: "Nunito-Regular", sans-serif;
 `;
 
 export const FooterAuthor = styled.p`
   line-height: 22px;
-  color: #DADADA;
-	font-family: "Nunito-Regular" , sans-serif;
+  color: #dadada;
+  font-family: "Nunito-Regular", sans-serif;
 
   &span {
     margin-left: 16px;
-	  font-family: "Nunito-Bold" , sans-serif;
+    font-family: "Nunito-Bold", sans-serif;
   }
 `;

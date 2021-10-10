@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 
+import Logo from "../../shared/Logo";
 import { setUser, setAuth } from "../../redux";
 import { signup } from "../../api/userApi";
-import { Logo } from "../../shared/Logo";
 import { HOME_ROUTE } from "../../utils/constants";
 import {
   SignUpWrapper,
@@ -27,13 +28,11 @@ const SignUp = ({ userData, setUser, setAuth }) => {
 
   const changeHandler = (event) => {
     setForm({ ...form, [event.target.name]: event.target.value });
-    console.log(form);
   };
 
   const sign = async () => {
     try {
       const user = await signup(form.email, form.password);
-      console.log(user);
       setUser(user);
       setAuth(true);
       history.push(HOME_ROUTE);
@@ -87,6 +86,18 @@ const SignUp = ({ userData, setUser, setAuth }) => {
       </LoginWrapper>
     </SignUpWrapper>
   );
+};
+
+SignUp.propTypes = {
+  setUser: PropTypes.func,
+  setAuth: PropTypes.func,
+  userData: PropTypes.object,
+};
+
+SignUp.defaultProps = {
+  setUser: () => {},
+  setAuth: () => {},
+  userData: {},
 };
 
 const mapStateToProps = (state) => {

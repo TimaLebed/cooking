@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 
-import { Card } from "../../../../shared/Card";
-import { Button } from "../../../../shared/Button";
-import { PopupRecipes } from "../../../../shared/PopupRecipes";
+import Card from "../../../../shared/Card";
+import Button from "../../../../shared/Button";
+import PopupRecipes from "../../../../shared/PopupRecipes";
 import {
   RecipesWrapper,
   RecipesContent,
@@ -11,22 +12,11 @@ import {
   CardsContainer,
 } from "./index.styled";
 
-export const PopularRecipes = ({ recipes }) => {
+const PopularRecipes = ({ recipes }) => {
   const [popupActive, setPopupActive] = useState(false);
   const [clickedCardId, setClickedCardId] = useState(null);
 
-  const popup = recipes.map((item, index) => {
-    if (index === Number(clickedCardId)) {
-      return (
-        <PopupRecipes
-          key={item.id}
-          active={popupActive}
-          setActive={setPopupActive}
-          clickedCard={item}
-        ></PopupRecipes>
-      );
-    }
-  });
+  const recipe = recipes.find((_, index) => index === Number(clickedCardId));
 
   const cards = recipes.map((item) => (
     <Card
@@ -34,8 +24,10 @@ export const PopularRecipes = ({ recipes }) => {
       card={item}
       setPopupActive={setPopupActive}
       setClickedCardId={setClickedCardId}
-    ></Card>
+    />
   ));
+
+  console.log(recipe)
 
   return (
     <>
@@ -47,7 +39,22 @@ export const PopularRecipes = ({ recipes }) => {
           <Button>Show More</Button>
         </RecipesContent>
       </RecipesWrapper>
-      {popup}
+      <PopupRecipes
+        // key={recipe.id}
+        active={popupActive}
+        setActive={setPopupActive}
+        clickedCard={recipe}
+      />
     </>
   );
 };
+
+PopularRecipes.propTypes = {
+  recipes: PropTypes.array,
+};
+
+PopularRecipes.defaultProps = {
+  recipes: [],
+};
+
+export default PopularRecipes;

@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { css } from '@emotion/react';
+import { css } from "@emotion/react";
 
 export const SignUpWrapper = styled.div`
   width: 100%;
@@ -8,7 +8,7 @@ export const SignUpWrapper = styled.div`
   display: flex;
   align-items: center;
   position: relative;
-  background-color: #F7F7F7;
+  background-color: #f7f7f7;
   justify-content: flex-end;
   padding-right: 13.6%;
 `;
@@ -48,11 +48,11 @@ export const LoginSubtitle = styled.p`
   margin-top: 8px;
   font-size: 16px;
   line-height: 22px;
-	font-family: "Nunito-SemiBold", sans-serif;
+  font-family: "Nunito-SemiBold", sans-serif;
   color: #181818;
 
-  & :last-child{
-    color: #FFBC01;
+  & :last-child {
+    color: #ffbc01;
     font-family: "Nunito-Regular", sans-serif;
     text-decoration: none;
     margin-left: 10px;
@@ -71,7 +71,7 @@ export const Input = styled.input`
   font-size: 18px;
   font-family: "Nunito-Regular", sans-serif;
   padding-left: 20px;
-  border: 1px solid #DADADA;
+  border: 1px solid #dadada;
   border-radius: 8px;
   outline: none;
 `;
@@ -88,7 +88,7 @@ export const Button = styled.button`
   width: 488px;
   height: 54px;
   margin-top: 56px;
-  background: #FFBC01;
+  background: #ffbc01;
   border-radius: 10px;
   color: #181818;
   font-size: 20px;
@@ -97,4 +97,3 @@ export const Button = styled.button`
   outline: none;
   border: 0;
 `;
-

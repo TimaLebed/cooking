@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Comment } from "./Comment";
+
+import Comment from "./Comment";
 import {
   CommentsWrapper,
   Title,
@@ -9,21 +10,19 @@ import {
   WrapperComments,
 } from "./index.styled";
 
-const urlCards = "./dataCards.json";
-
-export const Comments = () => {
+const Comments = () => {
   const [data, setData] = useState({ cards: [] });
 
-  useEffect(() => {
-    const fetchCards = async () => {
-      let response = await fetch(urlCards);
-      response = await response.json();
+  // useEffect(() => {
+  //   const fetchCards = async () => {
+  //     let response = await fetch(urlCards);
+  //     let data = await response.json();
 
-      setData({ cards: response });
-    };
+  //     setData({ cards: data });
+  //   };
 
-    fetchCards();
-  }, []);
+  //   fetchCards();
+  // }, []);
 
   const comments = data.cards.map((item) => {
     return <Comment key={item.id} person={item}></Comment>;
@@ -33,15 +32,12 @@ export const Comments = () => {
     <CommentsWrapper>
       <Title>Comments ({data.cards.length})</Title>
       <Form>
-        <Input
-          type="text"
-          placeholder="Express yourself..."
-          // value={props.searchValue}
-          // onChange={props.onSearchInput}
-        />
+        <Input type="text" placeholder="Express yourself..." />
         <Button></Button>
       </Form>
       <WrapperComments>{comments}</WrapperComments>
     </CommentsWrapper>
   );
 };
+
+export default Comments;

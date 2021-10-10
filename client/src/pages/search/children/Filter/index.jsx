@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 
 import {
   FilterWrapper,
@@ -26,7 +27,7 @@ const checkbox = [
   { key: 3, value: "Hide My CookBooks" },
 ];
 
-export const Filter = ({ handleFilters }) => {
+const Filter = ({ handleFilters }) => {
   const [selectValue, setSelectValue] = useState(0);
   const [checked, setChecked] = useState([]);
 
@@ -38,7 +39,6 @@ export const Filter = ({ handleFilters }) => {
     const currentIndex = checked.indexOf(id);
     const newChecked = [...checked];
     console.log(currentIndex);
-
 
     if (currentIndex === -1) {
       newChecked.push(id);
@@ -74,21 +74,16 @@ export const Filter = ({ handleFilters }) => {
           <Span>{item.value}</Span>
         </Label>
       ))}
-      {/* <Label>
-        <Checkbox type="checkbox"></Checkbox>
-        <SpanFake></SpanFake>
-        <Span>Without Milk</Span>
-      </Label>
-      <Label>
-        <Checkbox type="checkbox"></Checkbox>
-        <SpanFake></SpanFake>
-        <Span>Without Eggs</Span>
-      </Label>
-      <Label>
-        <Checkbox type="checkbox"></Checkbox>
-        <SpanFake></SpanFake>
-        <Span>Hide My CookBoks</Span>
-      </Label> */}
     </FilterWrapper>
   );
 };
+
+Filter.propTypes = {
+  handleFilters: PropTypes.func,
+};
+
+Filter.defaultProps = {
+  handleFilters: () => {},
+};
+
+export default Filter;

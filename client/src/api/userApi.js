@@ -1,5 +1,5 @@
-import { host, authHost } from "./http";
 import jwt_decode from "jwt-decode";
+import { host, authHost } from "./http";
 
 export const signup = async (email, password) => {
   const { data } = await host.post("api/user/signup", {

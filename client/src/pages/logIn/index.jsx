@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 
+import Logo from "../../shared/Logo";
 import { setUser, setAuth } from "../../redux";
 import { login, checkAuth } from "../../api/userApi";
-import { Logo } from "../../shared/Logo";
 import { HOME_ROUTE } from "../../utils/constants";
 import {
   LoginWrapper,
@@ -47,21 +48,16 @@ const Login = ({ userData, setUser, setAuth }) => {
 
   return (
     <LoginWrapper>
-      <LoginBackground></LoginBackground>
+      <LoginBackground />
       <LoginContent>
-        <Logo></Logo>
+        <Logo />
         <LoginTitle>Welcome back</LoginTitle>
         <LoginSubtitle>
           New here?
           <Link to="/signup">Create an account</Link>
         </LoginSubtitle>
         <InputField>
-          <Input
-            id="email"
-            type="text"
-            name="email"
-            onChange={changeHandler}
-          ></Input>
+          <Input id="email" type="text" name="email" onChange={changeHandler} />
           <Label htmlFor="email">Email</Label>
         </InputField>
         <InputField>
@@ -70,7 +66,7 @@ const Login = ({ userData, setUser, setAuth }) => {
             type="password"
             name="password"
             onChange={changeHandler}
-          ></Input>
+          />
           <Label htmlFor="password">Password</Label>
         </InputField>
         <Button type="button" onClick={sign}>
@@ -81,11 +77,21 @@ const Login = ({ userData, setUser, setAuth }) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    userData: state.user,
-  };
+Login.propTypes = {
+  userData: PropTypes.object,
+  setUser: PropTypes.func,
+  setAuth: PropTypes.func,
 };
+
+Login.defaultProps = {
+  userData: {},
+  setUser: () => {},
+  setAuth: () => {},
+};
+
+const mapStateToProps = (state) => ({
+  userData: state.user,
+});
 
 const mapDispatchToProps = {
   setUser,
