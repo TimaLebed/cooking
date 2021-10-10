@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 import config from "config";
 
 import ApiError from "../error/ApiError.js";
-import { User, Basket } from "../models/index.js";
+import User from "../models/users.js";
 
 const generateJwt = (id, email, role) => {
   return jwt.sign({ id, email, role }, config.get("SECRET_KEY"), {

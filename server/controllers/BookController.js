@@ -1,4 +1,4 @@
-import { Book } from "../models/index.js";
+import Book from "../models/books.js";
 import ApiError from "../error/ApiError.js";
 
 class BookController {
