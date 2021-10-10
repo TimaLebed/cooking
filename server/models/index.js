@@ -1,39 +1,46 @@
-import DataTypes from "sequelize";
-import db from "../db.js";
+"use strict";
 
-const User = db.define("user", {
-  id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-  email: { type: DataTypes.STRING, unique: true },
-  password: { type: DataTypes.STRING },
-  role: { type: DataTypes.STRING, defaultValue: "USER" },
+const fs = require("fs");
+const path = require("path");
+const Sequelize = require("sequelize");
+const basename = path.basename(__filename);
+const env = process.env.NODE_ENV || "development";
+const config = require(__dirname + "/../config/config.json")[env];
+const db = {};
+
+let sequelize;
+if (config.use_env_variable) {
+  sequelize = new Sequelize(process.env[config.use_env_variable], config);
+} else {
+  sequelize = new Sequelize(
+    config.database,
+    config.username,
+    config.password,
+    config
+  );
+}
+
+fs.readdirSync(__dirname)
+  .filter((file) => {
+    return (
+      file.indexOf(".") !== 0 && file !== basename && file.slice(-3) === ".js"
+    );
+  })
+  .forEach((file) => {
+    const model = require(path.join(__dirname, file))(
+      sequelize,
+      Sequelize.DataTypes
+    );
+    db[model.name] = model;
+  });
+
+Object.keys(db).forEach((modelName) => {
+  if (db[modelName].associate) {
+    db[modelName].associate(db);
+  }
 });
 
-const Basket = db.define("basket", {
-  id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-});
+db.sequelize = sequelize;
+db.Sequelize = Sequelize;
 
-const Book = db.define("book", {
-  id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-  views: { type: DataTypes.STRING },
-  title: { type: DataTypes.STRING },
-  author: { type: DataTypes.STRING },
-  likes: { type: DataTypes.STRING },
-  comments: { type: DataTypes.STRING },
-  description: { type: DataTypes.STRING },
-  img: { type: DataTypes.STRING },
-});
-
-const Recipe = db.define("recipe", {
-  id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-});
-
-User.hasOne(Basket);
-Basket.belongsTo(User);
-
-Basket.hasMany(Book);
-Book.belongsTo(Basket);
-
-// Basket.hasMany(Recipe);
-// Recipe.belongsTo(Basket);
-
-export { User, Basket, Book, Recipe };
+module.exports = db;

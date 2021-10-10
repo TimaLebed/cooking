@@ -3,7 +3,7 @@ import cors from "cors";
 import config from "config";
 
 import db from "./db.js";
-import router from "./routes/index.js"
+import router from "./routes/index.js";
 import ErrorHandler from "./middleware/errorHandling.js";
 import * as models from "./models/index.js";
 
@@ -21,7 +21,8 @@ app.use(ErrorHandler);
 async function startApp() {
   try {
     await db.authenticate();
-    await db.sync();
+    await db.sync({force: true});
+
     app.listen(PORT, () => console.log(`Server is running on port: ${PORT}`));
   } catch (err) {
     console.error("Unable to connect to the database:", err);
