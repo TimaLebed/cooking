@@ -1,17 +1,114 @@
-import React from "react";
-import Sign from "../../components/Sign";
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { Link, useHistory } from "react-router-dom";
+
+import Logo from "../../shared/Logo";
+import { setUser, setAuth } from "../../redux";
+import { signup } from "../../api/userApi";
+import { HOME_ROUTE } from "../../utils/constants";
 import {
   SignUpWrapper,
   SignUpBackground,
-} from "./SignUp.styled";
+  LoginWrapper,
+  LoginTitle,
+  LoginSubtitle,
+  InputField,
+  Input,
+  Label,
+  Button,
+} from "./index.styled";
 
-function SignUp() {
+const SignUp = ({ userData, setUser, setAuth }) => {
+  const history = useHistory();
+  const [form, setForm] = useState({
+    email: "",
+    password: "",
+  });
+
+  const changeHandler = (event) => {
+    setForm({ ...form, [event.target.name]: event.target.value });
+  };
+
+  const sign = async () => {
+    try {
+      const user = await signup(form.email, form.password);
+      setUser(user);
+      setAuth(true);
+      history.push(HOME_ROUTE);
+    } catch (error) {
+      alert(error.response.data.message);
+    }
+  };
+
+  console.log(userData);
+
   return (
     <SignUpWrapper>
       <SignUpBackground></SignUpBackground>
-      <Sign></Sign>
+      <LoginWrapper>
+        <Logo></Logo>
+        <LoginTitle>Welcome back</LoginTitle>
+        <LoginSubtitle>
+          Already have an account?
+          <Link to="/login">Sign In</Link>
+        </LoginSubtitle>
+        <InputField>
+          <Input
+            id="email"
+            type="text"
+            name="email"
+            onChange={changeHandler}
+          ></Input>
+          <Label htmlFor="email">Email</Label>
+        </InputField>
+        <InputField>
+          <Input
+            id="password"
+            type="password"
+            name="password"
+            onChange={changeHandler}
+          ></Input>
+          <Label htmlFor="password">Password</Label>
+        </InputField>
+        <InputField>
+          <Input
+            id="confirm"
+            type="password"
+            name="confirm"
+            onChange={changeHandler}
+          ></Input>
+          <Label htmlFor="confirm">Confirm Password</Label>
+        </InputField>
+        <Button type="button" onClick={sign}>
+          Sign Up
+        </Button>
+      </LoginWrapper>
     </SignUpWrapper>
-  )
-}
+  );
+};
 
-export default SignUp;
+SignUp.propTypes = {
+  setUser: PropTypes.func,
+  setAuth: PropTypes.func,
+  userData: PropTypes.object,
+};
+
+SignUp.defaultProps = {
+  setUser: () => {},
+  setAuth: () => {},
+  userData: {},
+};
+
+const mapStateToProps = (state) => {
+  return {
+    userData: state.user,
+  };
+};
+
+const mapDispatchToProps = {
+  setUser,
+  setAuth,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp);

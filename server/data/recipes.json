@@ -1,0 +1,74 @@
+[
+  {
+    "views": "10000",
+    "img": "/../static/images/fish.png",
+    "title": "Fish",
+    "author": "Sam Winchester",
+    "likes": "4996",
+    "comments": "124",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Bibendum tempus viverra augue ac elit.",
+    "directions": [
+      "Do something",
+      "Then do something",
+      "Then do something",
+      "Then do something",
+      "Then do something",
+      "Then do something"
+    ],
+    "ingredients": ["100g", "200g", "1400g", "150g", "400g"]
+  },
+  {
+    "views": "8000",
+    "img": "/../static/images/pancakes.png",
+    "title": "Pancakes",
+    "author": "Dean Winchester",
+    "likes": "6533",
+    "comments": "90",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Bibendum tempus viverra augue ac elit.",
+    "directions": [
+      "Do something",
+      "Then do something",
+      "Then do something",
+      "Then do something",
+      "Then do something",
+      "Then do something"
+    ],
+    "ingredients": ["100g", "200g", "1400g", "150g", "400g"]
+  },
+  {
+    "views": "6780",
+    "img": "/../static/images/pancakes-fruit.png",
+    "title": "Fruits",
+    "author": "Bobby Singer",
+    "likes": "100",
+    "comments": "12",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Bibendum tempus viverra augue ac elit.",
+    "directions": [
+      "Do something",
+      "Then do something",
+      "Then do something",
+      "Then do something",
+      "Then do something",
+      "Then do something"
+    ],
+    "ingredients": ["100g", "200g", "1400g", "150g", "400g"]
+  },
+  {
+    "views": "20000",
+    "img": "/../static/images/oatmeal-fruit.png",
+    "title": "Oatmeal",
+    "author": "Crowley",
+    "likes": "3020",
+    "comments": "300",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Bibendum tempus viverra augue ac elit.",
+    "directions": [
+      "Do something",
+      "Then do something",
+      "Then do something",
+      "Then do something",
+      "Then do something",
+      "Then do something"
+    ],
+    "ingredients": ["100g", "200g", "1400g", "150g", "400g"]
+  }
+]
