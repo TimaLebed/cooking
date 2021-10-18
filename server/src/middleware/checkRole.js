@@ -1,5 +1,7 @@
 import jwt from "jsonwebtoken";
-import config from "config";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 export default function (role) {
   return function (req, res, next) {
@@ -14,7 +16,7 @@ export default function (role) {
         return res.status(401).json({ message: "Пользователь не авторизован" });
       }
 
-      const decoded = jwt.verify(token, config.get("SECRET_KEY"));
+      const decoded = jwt.verify(token, process.env.SECRET_KEY);
 
       if(decoded.role !== role) {
         return res.status(403).json({ message: "Нет доступа" });

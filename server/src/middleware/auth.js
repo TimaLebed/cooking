@@ -1,5 +1,7 @@
 import jwt from "jsonwebtoken";
-import config from "config";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 export default function (req, res, next) {
   if (req.method === "OPTIONS") {
@@ -13,7 +15,7 @@ export default function (req, res, next) {
       return res.status(401).json({ message: "Пользователь не авторизован" });
     }
 
-    const decoded = jwt.verify(token, config.get("SECRET_KEY"));
+    const decoded = jwt.verify(token, process.env.SECRET_KEY);
 
     req.user = decoded;
     next();

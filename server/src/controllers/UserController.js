@@ -1,14 +1,15 @@
-import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import config from "config";
+import dotenv from "dotenv";
 
 import ApiError from "../error/ApiError.js";
 import Models from "../models/index.js";
 
+dotenv.config();
+
 const { Users } = Models;
 
 const generateJwt = (id, email, role) => {
-  return jwt.sign({ id, email, role }, config.get("SECRET_KEY"), {
+  return jwt.sign({ id, email, role }, process.env.SECRET_KEY, {
     expiresIn: "24h",
   });
 };
@@ -27,8 +28,7 @@ class UserController {
       return next(ApiError.failRequest("Пользователь с email уже существует!"));
     }
 
-    const hashPassword = await bcrypt.hash(password, 5);
-    const user = await Users.create({ email, role, password: hashPassword });
+    const user = await Users.create({ email, role, password});
     const token = generateJwt(user.id, user.email, user.role);
 
     return res.json({ token });
@@ -42,9 +42,7 @@ class UserController {
       return next(ApiError.internal("Пользователь с email не найден"));
     }
 
-    let comparePassword = bcrypt.compare(password, user.password);
-
-    if (!comparePassword) {
+    if (password !== user.password) {
       return next(ApiError.internal("Неверный пароль"));
     }
 

@@ -27,8 +27,6 @@ const PopularRecipes = ({ recipes }) => {
     />
   ));
 
-  console.log(recipe)
-
   return (
     <>
       <RecipesWrapper>
