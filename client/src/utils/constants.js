@@ -4,3 +4,6 @@ export const SIGNUP_ROUTE = "/signup";
 export const LOGIN_ROUTE = "/login";
 export const BOOKS_ROUTE = "/books";
 export const RECIPES_ROUTE = "/recipes";
+export const MY_BOOKS_ROUTE = "/my-books";
+export const MY_RECIPES_ROUTE = "/my-recipes";
+export const MY_SETTINGS_ROUTE = "/my-settings";

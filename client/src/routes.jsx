@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Search from "./pages/Search";
 import SignUp from "./pages/SignUp";
 import Login from "./pages/LogIn";
+import Profile from "./pages/Profile";
 import WithHeaderAndFooter from "./hoc/WithHeaderAndFooter";
 import {
   ADMIN_ROUTE,
@@ -13,6 +14,9 @@ import {
   LOGIN_ROUTE,
   BOOKS_ROUTE,
   RECIPES_ROUTE,
+  MY_BOOKS_ROUTE,
+  MY_RECIPES_ROUTE,
+  MY_SETTINGS_ROUTE,
 } from "./utils/constants";
 
 export const authRoutes = [
@@ -52,6 +56,30 @@ export const publicRoutes = [
     Component: () => (
       <WithHeaderAndFooter>
         <Search routePath={RECIPES_ROUTE} />
+      </WithHeaderAndFooter>
+    ),
+  },
+  {
+    path: MY_BOOKS_ROUTE,
+    Component: () => (
+      <WithHeaderAndFooter>
+        <Profile routePath={MY_BOOKS_ROUTE} />
+      </WithHeaderAndFooter>
+    ),
+  },
+  {
+    path: MY_RECIPES_ROUTE,
+    Component: () => (
+      <WithHeaderAndFooter>
+        <Profile routePath={MY_RECIPES_ROUTE} />
+      </WithHeaderAndFooter>
+    ),
+  },
+  {
+    path: MY_SETTINGS_ROUTE,
+    Component: () => (
+      <WithHeaderAndFooter>
+        <Profile routePath={MY_SETTINGS_ROUTE} />
       </WithHeaderAndFooter>
     ),
   },
