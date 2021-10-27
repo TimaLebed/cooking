@@ -1,13 +1,13 @@
 import ApiError from "../error/ApiError.js";
 import Models from "../models/index.js";
 
-const { Books } = Models;
+const { Book } = Models;
 
 class BookController {
   async getAllBooks(req, res) {
-    const books = await Books.findAll();
+    const book = await Book.findAll();
 
-    return res.json(books);
+    return res.json(book);
   }
 
   async create(req, res) {
