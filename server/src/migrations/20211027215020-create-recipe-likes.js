@@ -1,6 +1,7 @@
 "use strict";
 
-let tableModel = { schema: "app", tableName: "basket" };
+let tableModel = { schema: "app", tableName: "recipe-likes" };
+let tableModel_recipes = { schema: "app", tableName: "recipes" };
 let tableModel_users = { schema: "app", tableName: "users" };
 
 module.exports = {
@@ -15,13 +16,22 @@ module.exports = {
           primaryKey: true,
           type: Sequelize.INTEGER,
         },
+        recipe_id: {
+          type: Sequelize.INTEGER,
+          onDelete: "CASCADE",
+          references: {
+            model: tableModel_recipes,
+            key: "id",
+            as: "recipe_id",
+          },
+        },
         user_id: {
           type: Sequelize.INTEGER,
           onDelete: "CASCADE",
           references: {
             model: tableModel_users,
             key: "id",
-            as: "user-id",
+            as: "user_id",
           },
         },
         createdAt: {
@@ -36,7 +46,7 @@ module.exports = {
         },
       });
 
-      await queryInterface.addIndex(tableModel, ['id'], { transaction });
+      await queryInterface.addIndex(tableModel, ["id"], { transaction });
 
       await transaction.commit();
     } catch (err) {

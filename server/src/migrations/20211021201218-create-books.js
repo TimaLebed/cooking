@@ -1,6 +1,7 @@
 'use strict';
 
 let tableModel = { schema: 'app', tableName: 'books' };
+let tableModel_users = { schema: "app", tableName: "users" };
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
@@ -13,6 +14,15 @@ module.exports = {
           autoIncrement: true,
           primaryKey: true,
           type: Sequelize.INTEGER
+        },
+        user_id: {
+          type: Sequelize.INTEGER,
+          onDelete: "CASCADE",
+          references: {
+            model: tableModel_users,
+            key: "id",
+            as: "user_id",
+          },
         },
         views: {
           type: Sequelize.STRING
@@ -32,6 +42,15 @@ module.exports = {
         img: {
           type: Sequelize.STRING
         },
+        vegetarian: {
+          type: Sequelize.BOOLEAN
+        },
+        without_milk: {
+          type: Sequelize.BOOLEAN
+        },
+        without_eggs: {
+          type: Sequelize.BOOLEAN
+        },
         createdAt: {
           allowNull: false,
           type: Sequelize.DATE,
@@ -46,6 +65,7 @@ module.exports = {
 
       await queryInterface.addIndex(tableModel, ['id'], { transaction });
       await queryInterface.addIndex(tableModel, ['title'], { transaction });
+      await queryInterface.addIndex(tableModel, ['user_id'], { transaction });
 
       await transaction.commit();
     } catch (err) {

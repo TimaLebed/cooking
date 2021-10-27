@@ -62,6 +62,11 @@ export default new UserController();
 
 // npx sequelize-cli model:generate --name Users --attributes email:string,password:string,role:string,name:string,profile_title:string
 
+// npx sequelize-cli model:generate --name BookComments --attributes book_id:integer,user_id:integer,comment:string
+// npx sequelize-cli model:generate --name RecipeComments --attributes recipe_id:integer,user_id:integer,comment:string
+// npx sequelize-cli model:generate --name BookLikes --attributes book_id:integer,user_id:integer
+// npx sequelize-cli model:generate --name RecipeLikes --attributes recipe_id:integer,user_id:integer
+
 // npx sequelize-cli model:generate --name Basket --attributes user_id:integer
 
 // npx sequelize-cli model:generate --name BasketBooks --attributes basket_id:integer,book_id:integer

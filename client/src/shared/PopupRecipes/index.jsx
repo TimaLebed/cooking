@@ -100,6 +100,9 @@ PopupRecipes.propTypes = {
     createdAt: PropTypes.string,
     updatedAt: PropTypes.string,
     id: PropTypes.number,
+    user_id: PropTypes.number,
+    book_id: PropTypes.number,
+    minutes: PropTypes.number,
   }),
 };
 
@@ -119,6 +122,9 @@ PopupRecipes.defaultProps = {
     createdAt: null,
     updatedAt: null,
     id: null,
+    user_id: null,
+    book_id: null,
+    minutes: null,
   },
 };
 

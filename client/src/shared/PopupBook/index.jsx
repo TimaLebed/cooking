@@ -78,6 +78,10 @@ PopupBook.propTypes = {
     createdAt: PropTypes.string,
     updatedAt: PropTypes.string,
     id: PropTypes.number,
+    user_id: PropTypes.number,
+    vegetarian: PropTypes.bool,
+    without_milk: PropTypes.bool,
+    without_eggs: PropTypes.bool,
   }),
 };
 
@@ -96,6 +100,10 @@ PopupBook.defaultProps = {
     createdAt: null,
     updatedAt: null,
     id: null,
+    user_id: null,
+    vegetarian: false,
+    without_milk: false,
+    without_eggs: false,
   },
 };
 

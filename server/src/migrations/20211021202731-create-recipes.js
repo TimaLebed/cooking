@@ -1,6 +1,8 @@
 'use strict';
 
 let tableModel = { schema: 'app', tableName: 'recipes' };
+let tableModel_books = { schema: "app", tableName: "books" };
+let tableModel_users = { schema: "app", tableName: "users" };
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
@@ -13,6 +15,24 @@ module.exports = {
           autoIncrement: true,
           primaryKey: true,
           type: Sequelize.INTEGER
+        },
+        user_id: {
+          type: Sequelize.INTEGER,
+          onDelete: "CASCADE",
+          references: {
+            model: tableModel_users,
+            key: "id",
+            as: "user_id",
+          },
+        },
+        book_id: {
+          type: Sequelize.INTEGER,
+          onDelete: "CASCADE",
+          references: {
+            model: tableModel_books,
+            key: "id",
+            as: "book_id",
+          },
         },
         views: {
           type: Sequelize.STRING
@@ -37,6 +57,9 @@ module.exports = {
         },
         ingredients: {
           type: Sequelize.ARRAY(Sequelize.STRING)
+        },
+        minutes: {
+          type: Sequelize.INTEGER
         },
         createdAt: {
           allowNull: false,
