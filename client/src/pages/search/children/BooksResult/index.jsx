@@ -23,8 +23,8 @@ const BooksResult = ({ books }) => {
     );
   });
 
-  const popup = books.map((item, index) => {
-    if (index === Number(clickedCardId)) {
+  const popup = books.map((item) => {
+    if (item.id === Number(clickedCardId)) {
       return (
         <PopupBook
           key={`popupbook-${item.id}`}

@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { v4 as uuidv4 } from 'uuid';
 
+import PopupEditButton from "../PopupEditButton";
 import {
   CardWrapper,
   CardViews,
   ButtonEdit,
+  PopupEdit,
+  ButtonPopupEdit,
   CardImg,
   WrapperTitleAuthor,
   CardDescription,
@@ -24,8 +26,7 @@ const Card = ({
   setPopupActive,
   setClickedCardId,
 }) => {
-  const randomNumber = (n) => Math.floor(Math.random() * n);
-
+  const [popupEditActive, setPopupEditActive] = useState(false);
   const handelClickCard = (event) => {
     const currentCardId = event.target.offsetParent.id;
 
@@ -33,19 +34,22 @@ const Card = ({
     setClickedCardId(currentCardId);
   };
 
+  const handelClickButtonEdit = () => {
+    setPopupEditActive(true);
+  };
+
   return (
     <CardWrapper
-      id={uuidv4()}
+      id={card.id}
       trending={trending}
       description={description}
       recipesResult={recipesResult}
-      onClick={handelClickCard}
     >
-      <CardViews recipesResult={recipesResult}>
-        {randomNumber(90000)} views
-      </CardViews>
-      <ButtonEdit recipesResult={recipesResult} />
+      <PopupEditButton active={popupEditActive} setActive={setPopupEditActive} />
+      <CardViews recipesResult={recipesResult}>{card.views} views</CardViews>
+      <ButtonEdit onClick={handelClickButtonEdit} recipesResult={recipesResult} />
       <CardImg
+        onClick={handelClickCard}
         trending={trending}
         recipesResult={recipesResult}
         cardImg={card.img}
@@ -59,8 +63,8 @@ const Card = ({
         {card.description}
       </CardDescription>
       <WrapperLikesComments trending={trending} recipesResult={recipesResult}>
-        <CardLikes>{randomNumber(1000)} likes</CardLikes>
-        <CardComments>{randomNumber(300)} comments</CardComments>
+        <CardLikes>{card.likes} likes</CardLikes>
+        <CardComments>{card.comments} comments</CardComments>
       </WrapperLikesComments>
     </CardWrapper>
   );
@@ -83,6 +87,12 @@ Card.propTypes = {
     createdAt: PropTypes.string,
     updatedAt: PropTypes.string,
     id: PropTypes.number,
+    user_id: PropTypes.number,
+    book_id: PropTypes.number,
+    minutes: PropTypes.number,
+    vegetarian: PropTypes.bool,
+    without_milk: PropTypes.bool,
+    without_eggs: PropTypes.bool,
     directions: PropTypes.array,
     ingredients: PropTypes.array,
   }),
@@ -103,6 +113,12 @@ Card.defaultProps = {
     createdAt: null,
     updatedAt: null,
     id: null,
+    user_id: null,
+    book_id: null,
+    minutes: null,
+    vegetarian: false,
+    without_milk: false,
+    without_eggs: false,
     directions: [],
     ingredients: [],
   },

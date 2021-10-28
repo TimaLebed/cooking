@@ -1,38 +1,50 @@
 [
   {
+    "user_id": 2,
     "views": "10000",
     "img": "/../static/images/book-steak.png",
     "title": "Steak",
     "author": "Sam Winchester",
     "likes": "4996",
-    "comments": "124",
+    "vegetarian": true,
+    "without_milk": false,
+    "without_eggs": false,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Bibendum tempus viverra augue ac elit. Interdum libero."
   },
   {
+    "user_id": 2,
     "views": "8000",
     "img": "/../static/images/book-cake.png",
     "title": "Cake",
     "author": "Dean Winchester",
     "likes": "6533",
-    "comments": "90",
+    "vegetarian": false,
+    "without_milk": true,
+    "without_eggs": false,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Bibendum tempus viverra augue ac elit. Interdum libero."
   },
   {
+    "user_id": 2,
     "views": "6780",
     "img": "/../static/images/book-salad.png",
     "title": "Salad",
     "author": "Bobby Singer",
     "likes": "100",
-    "comments": "12",
+    "vegetarian": false,
+    "without_milk": false,
+    "without_eggs": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Bibendum tempus viverra augue ac elit. Interdum libero."
   },
   {
+    "user_id": 2,
     "views": "20000",
     "img": "/../static/images/book-burger.png",
     "title": "Burgers",
     "author": "Crowley",
     "likes": "3020",
-    "comments": "300",
+    "vegetarian": true,
+    "without_milk": true,
+    "without_eggs": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Bibendum tempus viverra augue ac elit. Interdum libero."
   }
 ]

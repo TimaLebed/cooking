@@ -1,12 +1,12 @@
 import Models from "../models/index.js";
 
-const { Recipes } = Models;
+const { Recipe } = Models;
 
 class RecipeController {
   async getAllRecipes(req, res) {
-    const recipes = await Recipes.findAll();
+    const recipe = await Recipe.findAll();
 
-    return res.json(recipes);
+    return res.json(recipe);
   }
 }
 
