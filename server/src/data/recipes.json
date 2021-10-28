@@ -1,0 +1,82 @@
+[
+  {
+    "book_id": 1,
+    "user_id": 2,
+    "views": "10000",
+    "img": "/../static/images/fish.png",
+    "title": "Fish",
+    "author": "Sam Winchester",
+    "likes": "4996",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Bibendum tempus viverra augue ac elit.",
+    "directions": [
+      "Do something",
+      "Then do something",
+      "Then do something",
+      "Then do something",
+      "Then do something",
+      "Then do something"
+    ],
+    "minutes": 45,
+    "ingredients": ["100g", "200g", "1400g", "150g", "400g"]
+  },
+  {
+    "book_id": 1,
+    "user_id": 2,
+    "views": "8000",
+    "img": "/../static/images/pancakes.png",
+    "title": "Pancakes",
+    "author": "Dean Winchester",
+    "likes": "6533",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Bibendum tempus viverra augue ac elit.",
+    "directions": [
+      "Do something",
+      "Then do something",
+      "Then do something",
+      "Then do something",
+      "Then do something",
+      "Then do something"
+    ],
+    "minutes": 15,
+    "ingredients": ["100g", "200g", "1400g", "150g", "400g"]
+  },
+  {
+    "book_id": 2,
+    "user_id": 2,
+    "views": "6780",
+    "img": "/../static/images/pancakes-fruit.png",
+    "title": "Fruits",
+    "author": "Bobby Singer",
+    "likes": "100",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Bibendum tempus viverra augue ac elit.",
+    "directions": [
+      "Do something",
+      "Then do something",
+      "Then do something",
+      "Then do something",
+      "Then do something",
+      "Then do something"
+    ],
+    "minutes": 140,
+    "ingredients": ["100g", "200g", "1400g", "150g", "400g"]
+  },
+  {
+    "book_id": 2,
+    "user_id": 2,
+    "views": "20000",
+    "img": "/../static/images/oatmeal-fruit.png",
+    "title": "Oatmeal",
+    "author": "Crowley",
+    "likes": "3020",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Bibendum tempus viverra augue ac elit.",
+    "directions": [
+      "Do something",
+      "Then do something",
+      "Then do something",
+      "Then do something",
+      "Then do something",
+      "Then do something"
+    ],
+    "minutes": 220,
+    "ingredients": ["100g", "200g", "1400g", "150g", "400g"]
+  }
+]

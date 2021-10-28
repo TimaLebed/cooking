@@ -1,0 +1,16 @@
+[
+  {
+    "email": "admin@mail.ru",
+    "password": "admin",
+    "role": "ADMIN",
+    "name": "Admin Adminovich",
+    "profile_title": "I love Pizza"
+  },
+  {
+    "email": "client@mail.ru",
+    "password": "client",
+    "role": "",
+    "name": "Client Clientovich",
+    "profile_title": "I love Burger"
+  }
+]
