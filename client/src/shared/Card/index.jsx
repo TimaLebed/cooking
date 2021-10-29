@@ -28,7 +28,7 @@ const Card = ({
 }) => {
   const [popupEditActive, setPopupEditActive] = useState(false);
   const handelClickCard = (event) => {
-    const currentCardId = event.target.offsetParent.id;
+    const currentCardId = event.target.id;
 
     setPopupActive(true);
     setClickedCardId(currentCardId);
@@ -40,7 +40,6 @@ const Card = ({
 
   return (
     <CardWrapper
-      id={card.id}
       trending={trending}
       description={description}
       recipesResult={recipesResult}
@@ -49,6 +48,7 @@ const Card = ({
       <CardViews recipesResult={recipesResult}>{card.views} views</CardViews>
       <ButtonEdit onClick={handelClickButtonEdit} recipesResult={recipesResult} />
       <CardImg
+        id={card.id}
         onClick={handelClickCard}
         trending={trending}
         recipesResult={recipesResult}
