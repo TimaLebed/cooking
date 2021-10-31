@@ -20,6 +20,8 @@ export const CardWrapper = styled.div`
     description &&
     css`
       height: 487px;
+      margin-bottom: 16px;
+      margin-right: 24px;
     `}
 
     ${({ recipesResult }) =>

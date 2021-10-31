@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 export const CardWrapper = styled.div`
   width: 912px;
   height: 212px;
+  margin-bottom: 24px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: 50px 10px 10px;
   background-color: #fff;

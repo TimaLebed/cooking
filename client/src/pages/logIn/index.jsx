@@ -42,6 +42,9 @@ const Login = ({ userData, setUser, setAuth }) => {
 
       history.push(HOME_ROUTE);
     } catch (error) {
+      console.log(error.response.data)
+      console.log(error.message)
+      console.log(error.response.config)
       alert(error.response.data.message);
     }
   };
