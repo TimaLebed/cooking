@@ -20,7 +20,7 @@ const TrendingRecipes = ({ recipes }) => {
   const recipe = recipes.find((item) => item.id === Number(clickedCardId));
 
   const cards = recipes.map((item, index) => {
-    if (index === 3) return null;
+    if (index > 2) return null;
 
     return (
       <Card

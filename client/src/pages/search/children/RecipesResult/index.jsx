@@ -11,10 +11,7 @@ const RecipesResult = ({ recipes }) => {
 
   const recipe = recipes.find((item) => item.id === Number(clickedCardId));
 
-  const cards = recipes.map((item, index) => {
-    if (index === 3) return null;
-
-    return (
+  const cards = recipes.map((item) => (
       <CardRecipe
         recipesResult
         key={item.id}
@@ -22,16 +19,12 @@ const RecipesResult = ({ recipes }) => {
         setPopupActive={setPopupActive}
         setClickedCardId={setClickedCardId}
       />
-    );
-  });
+  ));
 
   return (
     <>
       <RecipesWrapper>
         {cards}
-        {cards}
-        {cards}
-
       </RecipesWrapper>
       <PopupRecipes
         active={popupActive}

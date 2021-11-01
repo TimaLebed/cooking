@@ -8,5 +8,15 @@
     "recipe_id": "2",
     "user_id": "2",
     "comment": "Not Nice Recipe"
+  },
+  {
+    "recipe_id": "1",
+    "user_id": "3",
+    "comment": "Not Perfect Recipe"
+  },
+  {
+    "recipe_id": "3",
+    "user_id": "3",
+    "comment": "Perfect Recipe"
   }
 ]

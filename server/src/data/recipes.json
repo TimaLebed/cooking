@@ -78,5 +78,45 @@
     ],
     "minutes": 220,
     "ingredients": ["100g", "200g", "1400g", "150g", "400g"]
+  },
+  {
+    "book_id": 3,
+    "user_id": 3,
+    "views": "1875",
+    "img": "/../static/images/recipe-1.png",
+    "title": "Meet",
+    "author": "Ross Geller",
+    "likes": "258",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Bibendum tempus viverra augue ac elit.",
+    "directions": [
+      "Do something",
+      "Then do something",
+      "Then do something",
+      "Then do something",
+      "Then do something",
+      "Then do something"
+    ],
+    "minutes": 90,
+    "ingredients": ["100g", "200g", "1400g", "150g", "400g"]
+  },
+  {
+    "book_id": 3,
+    "user_id": 3,
+    "views": "3579",
+    "img": "/../static/images/recipe-2.png",
+    "title": "Meet",
+    "author": "Gunther",
+    "likes": "456",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Bibendum tempus viverra augue ac elit.",
+    "directions": [
+      "Do something",
+      "Then do something",
+      "Then do something",
+      "Then do something",
+      "Then do something",
+      "Then do something"
+    ],
+    "minutes": 150,
+    "ingredients": ["100g", "200g", "1400g", "150g", "400g"]
   }
 ]

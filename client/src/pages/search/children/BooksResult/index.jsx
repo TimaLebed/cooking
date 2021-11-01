@@ -9,19 +9,15 @@ const BooksResult = ({ books }) => {
   const [popupActive, setPopupActive] = useState(false);
   const [clickedCardId, setClickedCardId] = useState(null);
 
-  const cards = books.map((item, index) => {
-    if (index === 3) return null;
-
-    return (
-      <Card
-        description
-        key={`card-${item.id}`}
-        card={item}
-        setPopupActive={setPopupActive}
-        setClickedCardId={setClickedCardId}
-      />
-    );
-  });
+  const cards = books.map((item) => (
+    <Card
+      description
+      key={`card-${item.id}`}
+      card={item}
+      setPopupActive={setPopupActive}
+      setClickedCardId={setClickedCardId}
+    />
+  ));
 
   const popup = books.map((item) => {
     if (item.id === Number(clickedCardId)) {
@@ -40,8 +36,6 @@ const BooksResult = ({ books }) => {
   return (
     <>
       <BooksWrapper>
-        {cards}
-        {cards}
         {cards}
       </BooksWrapper>
       {popup}
