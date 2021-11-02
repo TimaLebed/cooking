@@ -16,16 +16,18 @@ const PopularRecipes = ({ recipes }) => {
   const [popupActive, setPopupActive] = useState(false);
   const [clickedCardId, setClickedCardId] = useState(null);
 
-  const recipe = recipes.find((_, index) => index === Number(clickedCardId));
+  const recipe = recipes.find((item) => item.id === Number(clickedCardId));
 
-  const cards = recipes.map((item) => (
-    <Card
-      key={item.id}
-      card={item}
-      setPopupActive={setPopupActive}
-      setClickedCardId={setClickedCardId}
-    />
-  ));
+  const cards = recipes
+    .slice(0, 4)
+    .map((item) => (
+      <Card
+        key={item.id}
+        card={item}
+        setPopupActive={setPopupActive}
+        setClickedCardId={setClickedCardId}
+      />
+    ));
 
   return (
     <>

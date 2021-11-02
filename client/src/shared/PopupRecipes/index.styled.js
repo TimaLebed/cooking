@@ -2,11 +2,9 @@ import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 
 export const PopupWrapper = styled.div`
-  height: 100%;
   width: 100%;
   background-color: rgba(24, 24, 24, 0.4);
-  /* position: fixed; */
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   display: flex;
@@ -19,6 +17,7 @@ export const PopupWrapper = styled.div`
   ${(props) =>
     props.active &&
     css`
+      height: 100%;
       opacity: 1;
       pointer-events: all;
     `}
@@ -28,9 +27,10 @@ export const PopupInner = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-top: 300px;
   width: 1016px;
-  height: 1100px;
+  max-height: 1100px;
+  overflow-y: scroll;
+  margin-top: 5%;
   background-color: #fff;
   box-shadow: 0px 18px 60px rgba(24, 24, 24, 0.7);
   border-radius: 50px 10px 10px;

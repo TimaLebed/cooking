@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 
 import {
   CardWrapper,
@@ -18,19 +18,17 @@ import {
   CardComments,
 } from "./index.styled";
 
-const CardRecipe = ({card, setPopupActive, setClickedCardId}) => {
-  const randomNumber = (n) => Math.floor(Math.random() * n);
-
+const CardRecipe = ({ card, setPopupActive, setClickedCardId }) => {
   const handelClickCard = (event) => {
-    const currentCardId = event.target.offsetParent.id;
+    const currentCardId = event.target.id;
 
     setPopupActive(true);
     setClickedCardId(currentCardId);
   };
 
   return (
-    <CardWrapper id={uuidv4()} onClick={handelClickCard}>
-      <CardImg cardImg={card.img} alt="" />
+    <CardWrapper>
+      <CardImg cardImg={card.img} alt="" onClick={handelClickCard} id={card.id} />
       <Content>
         <WrapperTitleAuthor>
           <CardTitle>{card.title}</CardTitle>
@@ -39,9 +37,9 @@ const CardRecipe = ({card, setPopupActive, setClickedCardId}) => {
         <CardDescription>{card.description}</CardDescription>
         <Wrapper>
           <WrapperViewsLikesComments>
-            <CardViews>{randomNumber(90000)} views</CardViews>
-            <CardLikes>{randomNumber(1000)} likes</CardLikes>
-            <CardComments>{randomNumber(300)} comments</CardComments>
+            <CardViews>{card.views} views</CardViews>
+            <CardLikes>{card.likes} likes</CardLikes>
+            <CardComments>{} comments</CardComments>
           </WrapperViewsLikesComments>
           <ButtonEdit />
         </Wrapper>

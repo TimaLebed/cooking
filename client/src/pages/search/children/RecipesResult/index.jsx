@@ -9,10 +9,9 @@ const RecipesResult = ({ recipes }) => {
   const [popupActive, setPopupActive] = useState(false);
   const [clickedCardId, setClickedCardId] = useState(null);
 
-  const cards = recipes.map((item, index) => {
-    if (index === 3) return null;
+  const recipe = recipes.find((item) => item.id === Number(clickedCardId));
 
-    return (
+  const cards = recipes.map((item) => (
       <CardRecipe
         recipesResult
         key={item.id}
@@ -20,29 +19,18 @@ const RecipesResult = ({ recipes }) => {
         setPopupActive={setPopupActive}
         setClickedCardId={setClickedCardId}
       />
-    );
-  });
-
-  const popup = recipes.map((item, index) => {
-    if (index === Number(clickedCardId)) {
-      return (
-        <PopupRecipes
-          key={item.id}
-          active={popupActive}
-          setActive={setPopupActive}
-          clickedCard={item}
-        />
-      );
-    }
-  });
+  ));
 
   return (
     <>
       <RecipesWrapper>
         {cards}
-        {cards}
       </RecipesWrapper>
-      {popup}
+      <PopupRecipes
+        active={popupActive}
+        setActive={setPopupActive}
+        clickedCard={recipe}
+      />
     </>
   );
 };

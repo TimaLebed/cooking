@@ -12,5 +12,12 @@
     "role": "",
     "name": "Client Clientovich",
     "profile_title": "I love Burger"
+  },
+  {
+    "email": "user@mail.ru",
+    "password": "user",
+    "role": "",
+    "name": "User Userovich",
+    "profile_title": "I love Pasta"
   }
 ]

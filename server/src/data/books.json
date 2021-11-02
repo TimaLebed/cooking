@@ -46,5 +46,65 @@
     "without_milk": true,
     "without_eggs": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Bibendum tempus viverra augue ac elit. Interdum libero."
+  },
+  {
+    "user_id": 3,
+    "views": "50000",
+    "img": "/../static/images/book-1.png",
+    "title": "Fish",
+    "author": "Rachel Green",
+    "likes": "502",
+    "vegetarian": true,
+    "without_milk": false,
+    "without_eggs": false,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Bibendum tempus viverra augue ac elit. Interdum libero."
+  },
+  {
+    "user_id": 3,
+    "views": "4000",
+    "img": "/../static/images/book-2.png",
+    "title": "Fish",
+    "author": "Monica Geller",
+    "likes": "7040",
+    "vegetarian": false,
+    "without_milk": true,
+    "without_eggs": false,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Bibendum tempus viverra augue ac elit. Interdum libero."
+  },
+  {
+    "user_id": 3,
+    "views": "20256",
+    "img": "/../static/images/book-3.png",
+    "title": "Fish",
+    "author": "Phoebe Buffay",
+    "likes": "3561",
+    "vegetarian": false,
+    "without_milk": false,
+    "without_eggs": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Bibendum tempus viverra augue ac elit. Interdum libero."
+  },
+  {
+    "user_id": 3,
+    "views": "7000",
+    "img": "/../static/images/book-4.png",
+    "title": "Fish",
+    "author": "Joey Tribbiani",
+    "likes": "913",
+    "vegetarian": true,
+    "without_milk": true,
+    "without_eggs": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Bibendum tempus viverra augue ac elit. Interdum libero."
+  },
+  {
+    "user_id": 3,
+    "views": "7050",
+    "img": "/../static/images/book-5.png",
+    "title": "Fish",
+    "author": "Chandler Bing",
+    "likes": "891",
+    "vegetarian": false,
+    "without_milk": false,
+    "without_eggs": false,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Bibendum tempus viverra augue ac elit. Interdum libero."
   }
 ]

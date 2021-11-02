@@ -15,35 +15,41 @@ const generateJwt = (id, email, role) => {
 };
 
 class UserController {
-  async signup(req, res, next) {
+  async signup(req, res) {
     const { email, password, role } = req.body;
 
     if (!email || !password) {
-      return next(ApiError.failRequest("Некорректный email или password!"));
+      return res
+        .status(401)
+        .json({ message: "Некорректный email или password!" });
     }
 
     const candidate = await User.findOne({ where: { email } });
 
     if (candidate) {
-      return next(ApiError.failRequest("Пользователь с email уже существует!"));
+      return res
+        .status(409)
+        .json({ message: "Пользователь с email уже существует!" });
     }
 
-    const user = await User.create({ email, role, password});
+    const user = await User.create({ email, role, password });
     const token = generateJwt(user.id, user.email, user.role);
 
     return res.json({ token });
   }
 
-  async login(req, res, next) {
+  async login(req, res) {
     const { email, password } = req.body;
     const user = await User.findOne({ where: { email } });
 
     if (!user) {
-      return next(ApiError.internal("Пользователь с email не найден"));
+      return res
+        .status(404)
+        .send({ message: "Пользователь с email не найден" });
     }
 
     if (password !== user.password) {
-      return next(ApiError.internal("Неверный пароль"));
+      return res.status(401).send({ message: "Неверный пароль" });
     }
 
     const token = generateJwt(user.id, user.email, user.role);
@@ -51,7 +57,7 @@ class UserController {
     return res.json({ token });
   }
 
-  async checkAuth(req, res, next) {
+  async checkAuth(req, res) {
     const token = generateJwt(req.user.id, req.user.email, req.user.role);
 
     return res.json({ token });

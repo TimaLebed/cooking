@@ -17,12 +17,11 @@ import {
 const TrendingRecipes = ({ recipes }) => {
   const [popupActive, setPopupActive] = useState(false);
   const [clickedCardId, setClickedCardId] = useState(null);
-  const recipe = recipes.find((item, index) => index === Number(clickedCardId));
+  const recipe = recipes.find((item) => item.id === Number(clickedCardId));
 
-  const cards = recipes.map((item, index) => {
-    if (index === 3) return null;
-
-    return (
+  const cards = recipes
+    .slice(0, 3)
+    .map((item) => (
       <Card
         trending
         key={item.id}
@@ -30,8 +29,7 @@ const TrendingRecipes = ({ recipes }) => {
         setPopupActive={setPopupActive}
         setClickedCardId={setClickedCardId}
       />
-    );
-  });
+    ));
 
   return (
     <>
