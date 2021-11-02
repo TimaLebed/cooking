@@ -35,9 +35,7 @@ const BooksResult = ({ books }) => {
 
   return (
     <>
-      <BooksWrapper>
-        {cards}
-      </BooksWrapper>
+      <BooksWrapper>{cards}</BooksWrapper>
       {popup}
     </>
   );
