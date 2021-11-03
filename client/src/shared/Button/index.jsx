@@ -3,8 +3,12 @@ import PropTypes from "prop-types";
 
 import { StyledButton } from "./index.styled";
 
-const Button = ({inputHome, details, children}) => {
-  return <StyledButton inputHome={inputHome} details={details}>{children}</StyledButton>;
+const Button = ({ inputHome, details, children }) => {
+  return (
+    <StyledButton inputHome={inputHome} details={details}>
+      {children}
+    </StyledButton>
+  );
 };
 
 Button.propTypes = {

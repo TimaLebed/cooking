@@ -29,7 +29,7 @@ const Search = ({ fetchBooks, fetchRecipes, booksData, recipesData }) => {
           </div>
           <Content>
             <Nav>
-              <Link to={RECIPES_ROUTE}>Recepies</Link>
+              <Link to={RECIPES_ROUTE}>Recipes</Link>
               <Link to={BOOKS_ROUTE}>Cookbooks</Link>
             </Nav>
             <Switch>

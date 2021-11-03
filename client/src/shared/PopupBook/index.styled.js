@@ -13,6 +13,7 @@ export const PopupWrapper = styled.div`
   pointer-events: none;
   transition: 0.4s;
   z-index: 2;
+  backdrop-filter: blur(5px);
 
   ${(props) =>
     props.active &&
