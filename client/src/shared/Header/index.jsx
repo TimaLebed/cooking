@@ -37,6 +37,7 @@ const Header = ({
   const signOut = () => {
     setUser(null);
     setAuth(false);
+    localStorage.setItem("token", "");
   };
 
   return (
@@ -59,12 +60,12 @@ const Header = ({
           </HeaderForm>
           <ButtonCreate setActive={setPopupActive}>Create cookBook</ButtonCreate>
           {userData.isAuth ? (
-            ((<h5>{userData.user.email}</h5>),
-            (
+            <>
+              <h5>{userData.user.email}</h5>
               <Link to="/login" onClick={() => signOut()}>
                 Sign out
               </Link>
-            ))
+            </>
           ) : (
             <Link to="/login">Sign in</Link>
           )}

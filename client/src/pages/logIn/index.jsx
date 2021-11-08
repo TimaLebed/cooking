@@ -35,10 +35,10 @@ const Login = ({ userData, setUser, setAuth }) => {
     try {
       const user = await login(form.email, form.password);
       const token = localStorage.getItem("token");
-      const isAuth = await checkAuth(token);
+      // const isAuth = await checkAuth(token);
 
       setUser(user);
-      setAuth(isAuth);
+      setAuth(true);
 
       history.push(HOME_ROUTE);
     } catch (error) {
