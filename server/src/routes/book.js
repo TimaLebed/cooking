@@ -5,7 +5,8 @@ import checkRole from "../middleware/checkRole.js";
 
 const router = Router();
 
-router.post("/",checkRole("ADMIN"), BookController.create);
+// router.post("/",checkRole("ADMIN"), BookController.create);
+router.post("/", BookController.create);
 router.get("/", BookController.getAllBooks);
 
 export default router;

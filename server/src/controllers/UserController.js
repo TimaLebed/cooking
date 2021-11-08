@@ -65,22 +65,3 @@ class UserController {
 }
 
 export default new UserController();
-
-// npx sequelize-cli model:generate --name Users --attributes email:string,password:string,role:string,name:string,profile_title:string
-
-// npx sequelize-cli model:generate --name BookComments --attributes book_id:integer,user_id:integer,comment:string
-// npx sequelize-cli model:generate --name RecipeComments --attributes recipe_id:integer,user_id:integer,comment:string
-// npx sequelize-cli model:generate --name BookLikes --attributes book_id:integer,user_id:integer
-// npx sequelize-cli model:generate --name RecipeLikes --attributes recipe_id:integer,user_id:integer
-
-// npx sequelize-cli model:generate --name Basket --attributes user_id:integer
-
-// npx sequelize-cli model:generate --name BasketBooks --attributes basket_id:integer,book_id:integer
-
-// npx sequelize-cli model:generate --name BasketRecipes --attributes basket_id:integer,recipe_id:integer
-
-// npx sequelize-cli model:generate --name Reports --attributes user_id:integer,recipe_id:integer,book_id:integer,book_is_like:boolean,recipe_is_like:boolean,comment_book:string,comment_recipe:string
-
-// npx sequelize-cli model:generate --name Books --attributes views:string,title:string,author:string,likes:string,description:string,img:string
-
-// npx sequelize-cli model:generate --name Recipes --attributes views:string,title:string,author:string,likes:string,description:string,img:string,directions:array,ingredients:array

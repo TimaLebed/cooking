@@ -1,3 +1,6 @@
+import { v4 as uuidv4 } from "uuid";
+import * as path from "path";
+
 import ApiError from "../error/ApiError.js";
 import Models from "../models/index.js";
 
@@ -12,10 +15,24 @@ class BookController {
 
   async create(req, res) {
     try {
-      const { name } = req.body;
-      const type = await Book.create({ name });
+      const { user_id, title, description } = req.body;
+      const { img } = req.files;
 
-      return res.json({ type });
+      let fileName = uuidv4() + ".png";
+
+      img.mv(
+        path.resolve(path.resolve(path.dirname("")), "", "src/static", fileName)
+      );
+
+      const book = await Book.create({
+        user_id,
+        title,
+        description,
+        img: fileName,
+        views: "",
+      });
+
+      return res.json(book);
     } catch (error) {
       console.log(error);
     }
