@@ -26,8 +26,8 @@ const Header = ({
   booksData,
   recipesData,
 }) => {
-  const [popupActive, setPopupActive] = useState(false);
-  console.log(recipesData.recipes);
+  const [popupActive, setPopupActive] = useState(true);
+  console.log(recipesData.loading);
 
   useEffect(() => {
     fetchBooks();
@@ -46,7 +46,7 @@ const Header = ({
         <HeaderInner>
           <Logo />
           <HeaderNav>
-            <Link to={RECIPES_ROUTE}>Recepies</Link>
+            <Link to={RECIPES_ROUTE}>Recipes</Link>
             <Link to={BOOKS_ROUTE}>Cookbooks</Link>
           </HeaderNav>
           <HeaderForm>
@@ -72,10 +72,9 @@ const Header = ({
         </HeaderInner>
       </HeaderWrapper>
       <PopupCreateBook
-        // key={`popup-${item.id}`}
         active={popupActive}
         setActive={setPopupActive}
-        books={recipesData.recipes}
+        recipes={recipesData.recipes}
       ></PopupCreateBook>
     </>
   );

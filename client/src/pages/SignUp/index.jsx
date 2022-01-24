@@ -33,6 +33,7 @@ const SignUp = ({ userData, setUser, setAuth }) => {
   const sign = async () => {
     try {
       const user = await signup(form.email, form.password);
+
       setUser(user);
       setAuth(true);
       history.push(HOME_ROUTE);
@@ -40,8 +41,6 @@ const SignUp = ({ userData, setUser, setAuth }) => {
       alert(error.response.data.message);
     }
   };
-
-  console.log(userData);
 
   return (
     <SignUpWrapper>

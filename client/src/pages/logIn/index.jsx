@@ -34,8 +34,6 @@ const Login = ({ userData, setUser, setAuth }) => {
   const sign = async () => {
     try {
       const user = await login(form.email, form.password);
-      const token = localStorage.getItem("token");
-      // const isAuth = await checkAuth(token);
 
       setUser(user);
       setAuth(true);

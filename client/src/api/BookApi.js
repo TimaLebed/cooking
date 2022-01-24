@@ -16,6 +16,10 @@ class BookApi extends HttpClient {
   getBooks() {
     return this.instance.get("/books");
   }
+
+  createBook() {
+    return this.instance.post("/books", )
+  }
 }
 
 export default BookApi.getInstance();

@@ -55,6 +55,13 @@ export const InputField = styled.div`
   position: relative;
 `;
 
+export const TitleRecipe = styled.p`
+  margin-top: 40px;
+  color: #181818;
+  line-height: 20px;
+  font-family: "Montserrat-SemiBold", sans-serif;
+`;
+
 export const Input = styled.input`
   width: 100%;
   height: 40px;
@@ -78,6 +85,7 @@ export const Label = styled.label`
 
 export const Textarea = styled.textarea`
   width: 100%;
+  max-width: 696px;
   min-height: 100px;
   max-height: 215px;
   padding-top: 10px;
@@ -104,6 +112,30 @@ export const Button = styled.button`
   line-height: 30px;
   font-family: "Nunito-Bold", sans-serif;
   cursor: pointer;
+`;
+
+export const Select = styled.select`
+  width: 224px;
+  height: 40px;
+  padding: 11px 16px;
+  margin-top: 16px;
+  color: #181818;
+  font-family: "Nunito-Regular", sans-serif;
+  font-size: 14px;
+  line-height: 19px;
+  border: 1px solid #dadada;
+  border-radius: 4px;
+  appearance: none;
+  background-image: url("../../../../../static/icons/filter-arrow.svg");
+  background-repeat: no-repeat;
+  background-size: 14px;
+  background-position: right 16px top 50%;
+
+  &:focus,
+  :hover {
+    outline: none;
+    border: 1px solid #bdc3c7;
+  }
 `;
 
 export const WrapperCards = styled.div`
